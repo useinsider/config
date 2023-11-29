@@ -1,0 +1,36 @@
+{
+    "name": "@useinsider/eslint-config",
+    "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
+    "license": "MIT",
+    "version": "0.0.1",
+    "scripts": {
+        "lint": "eslint --ext .js,.cjs ./"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://useinsider/eslint-config.git"
+    },
+    "exports": {
+        ".": "./src/node.cjs",
+        "./dom": "./src/dom.cjs",
+        "./typescript": "./src/typescript.cjs",
+        "./typescript-dom": "./src/typescript-dom.cjs",
+        "./vue3": "./src/vue3.cjs",
+        "./node": "./src/node.cjs",
+        "./config": "./src/config.cjs"
+    },
+    "files": [
+        "src/**/*"
+    ],
+    "devDependencies": {
+        "@cspell/eslint-plugin": "8.0.0",
+        "@types/eslint": "8.44.7",
+        "@types/node": "20.10.1",
+        "eslint-config-airbnb-base": "15.0.0",
+        "eslint-plugin-import": "2.29.0",
+        "eslint-plugin-jsdoc": "46.9.0"
+    },
+    "peerDependencies": {
+        "eslint": "8.54.0"
+    }
+}
