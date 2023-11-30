@@ -28,6 +28,6 @@ module.exports = {
         ecmaFeatures: {
             jsx: true,
         },
-        extraFileExtensions: ['.vue'],
+        extraFileExtensions: ['.vue', '.gs'],
     },
 };

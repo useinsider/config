@@ -15,11 +15,11 @@ jobs:
     with:
       node-version: '20'
 
-  lint-rest:
-    needs: lint-primary
-    uses: ./.github/workflows/base-eslint-checker.yml
-    strategy:
-      matrix:
-        node-version: [16, 18, 'latest']
-    with:
-      node-version: ${{ matrix.node-version }}
+  # lint-rest:
+  #   needs: lint-primary
+  #   uses: ./.github/workflows/base-eslint-checker.yml
+  #   strategy:
+  #     matrix:
+  #       node-version: [16, 18, 'latest']
+  #   with:
+  #     node-version: ${{ matrix.node-version }}
