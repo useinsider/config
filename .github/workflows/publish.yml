@@ -28,7 +28,7 @@ jobs:
         run: pnpm install
 
       - name: Bump
-        uses: pnpm release
+        run: pnpm release
 
       - uses: JS-DevTools/npm-publish@v3
         with:
