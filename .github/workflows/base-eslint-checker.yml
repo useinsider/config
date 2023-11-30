@@ -56,10 +56,16 @@ jobs:
 
       - name: Lint files
         if: |
-          steps.filteredChanges.outputs.files != '' &&
           (
-            steps.prDetails.outputs.pr_found != 'true' ||
-            inputs.node-version != 20
+            github.ref == 'refs/heads/develop' ||
+            github.ref == 'refs/heads/main'
+          ) ||
+          (
+            steps.filteredChanges.outputs.files != '' &&
+            (
+              steps.prDetails.outputs.pr_found != 'true' ||
+              inputs.node-version != 20
+            )
           )
         run: pnpm lint
 
