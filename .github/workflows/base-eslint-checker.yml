@@ -11,6 +11,15 @@ jobs:
   lint:
     runs-on: self-runner-node16
     steps:
+      - name: Determine branch
+        id: determineBranch
+        run: >
+          echo "isPrimalBranch=$( \
+            [[ '${{ github.ref }}' == 'refs/heads/main' || '${{ github.ref }}' == 'refs/heads/develop' ]] \
+              && echo 'true' \
+              || echo 'false' \
+          )" >> $GITHUB_OUTPUT
+
       - name: Checkout develop branch
         uses: actions/checkout@v4
         with:
@@ -22,20 +31,28 @@ jobs:
           persist-credentials: false
 
       - name: Lookup for changed logic files
+        if: steps.determineBranch.outputs.isPrimalBranch == 'false'
         id: filteredChanges
-        run: echo "files=$(git diff-tree --diff-filter=ACM --no-commit-id --name-only -r origin/develop..$(git rev-parse HEAD) . | grep -iE '\.(([mc]?j|t)s|json)$' | xargs)" >> $GITHUB_OUTPUT
+        # https://regex101.com/r/lJYMpM/1
+        run: >
+          echo "files=$(\
+            git diff-tree --diff-filter=ACM --no-commit-id --name-only -r origin/develop..$(git rev-parse HEAD) . | \
+            grep -iE '(\.(([mc]?j|t)s|json)$|pnpm-lock\.ya?ml)' | \
+            xargs\
+          )" >> $GITHUB_OUTPUT
 
-      - if: steps.filteredChanges.outputs.files == ''
+
+      - if: steps.determineBranch.outputs.isPrimalBranch == 'false' && steps.filteredChanges.outputs.files == ''
         run: echo "The branch doesn't contain logic files. Passing on linting..." >> $GITHUB_STEP_SUMMARY
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-        if: steps.filteredChanges.outputs.files != ''
+        if: steps.determineBranch.outputs.isPrimalBranch == 'true' || steps.filteredChanges.outputs.files != ''
         with:
           run_install: false
 
       - name: Use NodeJS
-        if: steps.filteredChanges.outputs.files != ''
+        if: steps.determineBranch.outputs.isPrimalBranch == 'true' || steps.filteredChanges.outputs.files != ''
         uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version }}
@@ -43,7 +60,7 @@ jobs:
 
       - name: Find PR
         uses: 8BitJonny/gh-get-current-pr@2.2.0
-        if: steps.filteredChanges.outputs.files != ''&& startsWith(github.ref, 'refs/heads/feature/')
+        if: steps.determineBranch.outputs.isPrimalBranch == 'false' && steps.filteredChanges.outputs.files != ''
         id: prDetails
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -51,15 +68,12 @@ jobs:
           filterOutClosed: true
 
       - name: Install dependencies
-        if: steps.filteredChanges.outputs.files != ''
+        if: steps.determineBranch.outputs.isPrimalBranch == 'true' || steps.filteredChanges.outputs.files != ''
         run: pnpm install
 
       - name: Lint files
         if: |
-          (
-            github.ref == 'refs/heads/develop' ||
-            github.ref == 'refs/heads/main'
-          ) ||
+          steps.determineBranch.outputs.isPrimalBranch == 'true' ||
           (
             steps.filteredChanges.outputs.files != '' &&
             (
@@ -71,6 +85,7 @@ jobs:
 
       - name: Lint files for PR
         if: |
+          steps.determineBranch.outputs.isPrimalBranch == 'false' &&
           steps.filteredChanges.outputs.files != '' &&
           steps.prDetails.outputs.pr_found == 'true' &&
           inputs.node-version == 20
@@ -79,6 +94,7 @@ jobs:
       - name: Commit auto-fixes
         if: |
           always() &&
+          steps.determineBranch.outputs.isPrimalBranch == 'false' &&
           steps.filteredChanges.outputs.files != '' &&
           steps.prDetails.outputs.pr_title &&
           inputs.node-version == 20
