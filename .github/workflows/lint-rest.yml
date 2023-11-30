@@ -1,0 +1,20 @@
+name: Lint files (rest)
+
+on:
+  workflow_run:
+    workflows: ["Lint files (primary)"]
+    types:
+      - completed
+
+concurrency:
+  group: lint-rest-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-rest:
+    uses: ./.github/workflows/base-eslint-checker.yml
+    strategy:
+      matrix:
+        node-version: [16, 18, 'latest']
+    with:
+      node-version: ${{ matrix.node-version }}

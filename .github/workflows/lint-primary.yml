@@ -1,0 +1,16 @@
+name: Lint files (primary)
+
+on: push
+
+concurrency:
+  group: lint-primary-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-primary:
+    uses: ./.github/workflows/base-eslint-checker.yml
+    strategy:
+      matrix:
+        node-version: [20]
+    with:
+      node-version: ${{ matrix.node-version }}

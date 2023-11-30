@@ -7,7 +7,7 @@
     "scripts": {
         "lint": "eslint --ext .js,.cjs ./",
         "lint:fix": "pnpm lint --fix",
-        "release": "standard-version && git push --follow-tags && pnpm publish --dry-run --no-git-checks packages/eslint"
+        "release": "standard-version && git push --follow-tags"
     },
     "repository": {
         "type": "git",
