@@ -28,9 +28,9 @@ jobs:
       - if: steps.filteredChanges.outputs.files == ''
         run: echo "The branch doesn't contain logic files. Passing on linting..." >> $GITHUB_STEP_SUMMARY
 
-      - uses: pnpm/action-setup@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         if: steps.filteredChanges.outputs.files != ''
-        name: Install pnpm
         with:
           run_install: false
 
