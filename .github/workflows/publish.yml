@@ -1,8 +1,11 @@
 name: Publish
 
 on:
-  push:
-    branches: main
+  workflow_run:
+    workflows: ["Lint files"]
+    types:
+      - completed
+    branches: [main]
 
 jobs:
   publish:
@@ -24,11 +27,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint files
-        run: pnpm lint
-
-      # - name: Bump
-      #   uses: pnpm release
+      - name: Bump
+        uses: pnpm release
 
       - uses: JS-DevTools/npm-publish@v3
         with:
