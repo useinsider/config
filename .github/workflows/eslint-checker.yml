@@ -1,10 +1,6 @@
 name: Lint files
 
-on:
-  push:
-    branches-ignore:
-      - main
-      - develop
+on: push
 
 concurrency:
   group: lint-${{ github.event.pull_request.number || github.ref }}
