@@ -3,8 +3,10 @@
     "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
     "license": "MIT",
     "version": "0.0.1",
+    "packageManager": "pnpm@8.11.0",
     "scripts": {
-        "lint": "eslint --ext .js,.cjs ./"
+        "lint": "eslint --ext .js,.cjs ./",
+        "lint:fix": "pnpm lint --fix"
     },
     "repository": {
         "type": "git",
@@ -22,15 +24,15 @@
     "files": [
         "src/**/*"
     ],
-    "devDependencies": {
+    "peerDependencies": {
         "@cspell/eslint-plugin": "8.0.0",
+        "@stylistic/eslint-plugin": "1.4.1",
+        "@stylistic/eslint-plugin-migrate": "1.4.1",
         "@types/eslint": "8.44.7",
         "@types/node": "20.10.1",
+        "eslint": "8.54.0",
         "eslint-config-airbnb-base": "15.0.0",
         "eslint-plugin-import": "2.29.0",
         "eslint-plugin-jsdoc": "46.9.0"
-    },
-    "peerDependencies": {
-        "eslint": "8.54.0"
     }
 }

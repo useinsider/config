@@ -15,8 +15,6 @@ module.exports = {
             nestedBinaryExpressions: false,
             returnAssign: false,
         }],
-        '@typescript-eslint/space-infix-ops': ['error'],
-        '@typescript-eslint/type-annotation-spacing': ['error'],
         '@typescript-eslint/space-before-function-paren': ['error', {
             anonymous: 'always',
             named: 'always',
@@ -35,14 +33,6 @@ module.exports = {
         }],
         semi: 'off',
         '@typescript-eslint/semi': ['error', 'always'],
-        '@typescript-eslint/member-delimiter-style': ['error', {
-            multiline: {
-                requireLast: true,
-            },
-            singleline: {
-                requireLast: false,
-            },
-        }],
         '@typescript-eslint/no-misused-promises': ['error', {
             checksVoidReturn: { arguments: false },
         }],
