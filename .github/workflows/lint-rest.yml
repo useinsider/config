@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint-rest:
+  lint:
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
       matrix:
