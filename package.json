@@ -25,18 +25,16 @@
     "files": [
         "src/**/*"
     ],
-    "peerDependencies": {
+    "devDependencies": {
         "@cspell/eslint-plugin": "8.0.0",
         "@stylistic/eslint-plugin": "1.4.1",
         "@stylistic/eslint-plugin-migrate": "1.4.1",
-        "@types/eslint": "8.44.7",
+        "@types/eslint": "8.44.8",
         "@types/node": "20.10.1",
         "eslint": "8.54.0",
         "eslint-config-airbnb-base": "15.0.0",
         "eslint-plugin-import": "2.29.0",
-        "eslint-plugin-jsdoc": "46.9.0"
-    },
-    "devDependencies": {
+        "eslint-plugin-jsdoc": "46.9.0",
         "standard-version": "9.5.0"
     }
 }
