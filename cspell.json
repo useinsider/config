@@ -1,0 +1,13 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "language": "en-US",
+    "words": [
+        "camelcase",
+        "linebreak",
+        "plusplus"
+    ],
+    "ignoreWords": []
+}

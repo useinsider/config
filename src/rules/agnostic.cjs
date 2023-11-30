@@ -1,28 +1,15 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
     rules: {
-        '@cspell/spellchecker': ['error', {
-            customWordListFile: '../../cspell.json',
+        'arrow-parens': 'off',
+        camelcase: ['error', {
+            allow: ['^\\$_'],
         }],
-        'array-bracket-spacing': ['error', 'never'],
-        'array-element-newline': ['error', 'consistent'],
-        'arrow-parens': ['error', 'as-needed'],
-        'arrow-spacing': ['error'],
-        'brace-style': ['error', '1tbs'],
-        camelcase: ['error', { allow: ['^\\$_'] }],
         'class-methods-use-this': 'off',
-        'comma-dangle': ['error', {
-            arrays: 'always-multiline',
-            exports: 'always-multiline',
-            functions: 'never',
-            imports: 'always-multiline',
-            objects: 'always-multiline',
-        }],
-        'comma-spacing': ['error'],
+        'comma-dangle': 'off',
         'consistent-return': ['error'],
         curly: ['error', 'all'],
         'dot-notation': ['error'],
-        'function-paren-newline': ['error', 'consistent'],
         'guard-for-in': 'error',
         'handle-callback-err': ['error'],
         'import/extensions': ['error', {
@@ -30,10 +17,6 @@ module.exports = {
             ts: 'never',
             tsx: 'never',
             vue: 'always',
-            css: 'always',
-            scss: 'always',
-            svg: 'always',
-            json: 'always',
         }],
         'import/no-cycle': 'off',
         'import/no-unresolved': 'off',
@@ -48,22 +31,9 @@ module.exports = {
                 pattern: '@/**',
             }],
         }],
-        indent: ['error', 4, {
-            SwitchCase: 1,
-        }],
-        'key-spacing': ['error'],
-        'keyword-spacing': ['error'],
-        'lines-between-class-members': ['error', 'always', {
-            exceptAfterSingleLine: true,
-        }],
-        'max-len': ['error', 120, {
-            ignoreComments: true,
-            ignoreRegExpLiterals: true,
-            ignoreTemplateLiterals: true,
-            ignoreTrailingComments: true,
-            ignoreUrls: true,
-            ignorePattern: '^import .*?.svg.*',
-        }],
+        'import/prefer-default-export': 'off',
+        indent: 'off',
+        'max-len': 'off',
         'new-cap': ['error'],
         'no-alert': ['error'],
         'no-bitwise': ['error', {
@@ -84,12 +54,6 @@ module.exports = {
         'no-empty': ['error'],
         'no-extra-bind': ['error'],
         'no-extra-boolean-cast': 'error',
-        'no-extra-parens': ['error', 'all', {
-            enforceForArrowConditionals: false,
-            nestedBinaryExpressions: false,
-            returnAssign: false,
-        }],
-        'no-extra-semi': ['error'],
         'no-fallthrough': ['error'],
         'no-implicit-coercion': ['error', {
             boolean: true,
@@ -98,17 +62,6 @@ module.exports = {
         }],
         'no-invalid-regexp': ['error'],
         'no-iterator': ['error'],
-        'no-mixed-operators': ['error', {
-            allowSamePrecedence: true,
-            groups: [
-                ['&', '|', '^', '~', '<<', '>>', '>>>'],
-                ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
-                ['&&', '||'],
-                ['in', 'instanceof'],
-            ],
-        }],
-        'no-mixed-spaces-and-tabs': ['error'],
-        'no-multi-spaces': ['error'],
         'no-multi-str': ['error'],
         'no-native-reassign': 'error',
         'no-nested-ternary': ['error'],
@@ -126,7 +79,6 @@ module.exports = {
         'no-shadow': ['error', {
             allow: ['state'],
         }],
-        'no-trailing-spaces': ['error'],
         'no-undef': ['error'],
         'no-underscore-dangle': 'off',
         'no-unexpected-multiline': ['error'],
@@ -134,13 +86,11 @@ module.exports = {
         'no-unused-vars': ['error'],
         'no-use-before-define': 'error',
         'no-useless-call': ['error'],
-        'no-whitespace-before-property': ['error'],
+        'no-void': 'off',
         'no-with': ['error'],
-        'object-curly-newline': ['error', {
-            consistent: true,
-        }],
-        'object-curly-spacing': ['error', 'always'],
+        'object-curly-newline': 'off',
         'object-shorthand': ['error', 'always'],
+        'padded-blocks': 'off',
         'padding-line-between-statements': [
             'error',
             {
@@ -193,30 +143,10 @@ module.exports = {
             destructuring: 'all',
         }],
         'prefer-destructuring': ['error'],
-        'quote-props': ['error', 'as-needed'],
-        quotes: ['error', 'single', {
-            avoidEscape: true,
-        }],
         radix: ['error', 'as-needed'],
-        semi: ['error'],
-        'semi-spacing': ['error', {
-            after: true,
-            before: false,
-        }],
-        'space-before-blocks': ['error'],
-        'space-before-function-paren': ['error', {
-            anonymous: 'always',
-            named: 'always',
-        }],
-        'space-in-parens': ['error', 'never'],
-        'space-infix-ops': ['error'],
-        'spaced-comment': ['error'],
+        'space-before-function-paren': 'off',
         strict: ['error'],
         'use-isnan': ['error'],
         'valid-typeof': ['error'],
-        'no-void': 'off',
-        'eol-last': ['error', 'always'],
-        'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
-        'padded-blocks': ['error', 'never'],
     },
 };

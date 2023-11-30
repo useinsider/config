@@ -5,7 +5,8 @@ module.exports = {
         'airbnb-base',
         'plugin:jsdoc/recommended',
         'plugin:@cspell/recommended',
-        require.resolve('./rules/common.cjs'),
+        require.resolve('./rules/agnostic.cjs'),
+        require.resolve('./rules/stylistic.cjs'),
         require.resolve('./rules/jsdoc.cjs'),
     ],
 };

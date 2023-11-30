@@ -4,4 +4,9 @@ module.exports = {
     extends: [
         require.resolve('./src/node.cjs'),
     ],
+    rules: {
+        '@cspell/spellchecker': ['error', {
+            customWordListFile: './cspell.json',
+        }],
+    },
 };
