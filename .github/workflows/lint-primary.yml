@@ -2,6 +2,8 @@ name: Lint files (primary)
 
 on:
   push:
+    branches-ignore:
+      - main
   workflow_call:
 
 concurrency:
