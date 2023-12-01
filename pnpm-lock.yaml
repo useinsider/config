@@ -6,45 +6,45 @@ settings:
 
 dependencies:
   '@cspell/eslint-plugin':
-    specifier: '>=8.1.0'
+    specifier: 8.1.0
     version: 8.1.0
   eslint-config-airbnb-base:
-    specifier: '>=15.0.0'
+    specifier: 15.0.0
     version: 15.0.0(eslint-plugin-import@2.29.0)(eslint@8.54.0)
   eslint-plugin-import:
-    specifier: '>=2.29.0'
+    specifier: 2.29.0
     version: 2.29.0(@typescript-eslint/parser@6.13.1)(eslint@8.54.0)
   eslint-plugin-jsdoc:
-    specifier: '>=46.9.0'
+    specifier: 46.9.0
     version: 46.9.0(eslint@8.54.0)
 
 optionalDependencies:
   '@rushstack/eslint-patch':
-    specifier: 1.6.0
+    specifier: '>=1.6.0'
     version: 1.6.0
   '@stylistic/eslint-plugin':
-    specifier: 1.4.1
+    specifier: '>=1.4.1'
     version: 1.4.1(eslint@8.54.0)(typescript@5.3.2)
   '@stylistic/eslint-plugin-migrate':
-    specifier: 1.4.1
+    specifier: '>=1.4.1'
     version: 1.4.1(eslint@8.54.0)(typescript@5.3.2)
   '@typescript-eslint/eslint-plugin':
-    specifier: 6.13.1
+    specifier: '>=6.13.1'
     version: 6.13.1(@typescript-eslint/parser@6.13.1)(eslint@8.54.0)(typescript@5.3.2)
   '@vue/eslint-config-typescript':
-    specifier: 12.0.0
+    specifier: '>=12.0.0'
     version: 12.0.0(eslint-plugin-vue@9.19.2)(eslint@8.54.0)(typescript@5.3.2)
   eslint:
     specifier: '>=8.54.0'
     version: 8.54.0
   eslint-plugin-vue:
-    specifier: 9.19.2
+    specifier: '>=9.19.2'
     version: 9.19.2(eslint@8.54.0)
   eslint-plugin-vue-scoped-css:
-    specifier: 2.5.1
+    specifier: '>=2.5.1'
     version: 2.5.1(eslint@8.54.0)(vue-eslint-parser@9.3.2)
   vue-eslint-parser:
-    specifier: 9.3.2
+    specifier: '>=9.3.2'
     version: 9.3.2(eslint@8.54.0)
 
 devDependencies:
@@ -58,8 +58,8 @@ devDependencies:
     specifier: 8.44.8
     version: 8.44.8
   '@types/node':
-    specifier: 20.10.1
-    version: 20.10.1
+    specifier: 20.10.2
+    version: 20.10.2
   semantic-release:
     specifier: 22.0.8
     version: 22.0.8(typescript@5.3.2)
@@ -865,8 +865,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: false
 
-  /@types/node@20.10.1:
-    resolution: {integrity: sha512-T2qwhjWwGH81vUEx4EXmBKsTJRXFXNZTL4v0gi01+zyBmCwzE6TyHszqX01m+QHTEq+EZNo13NeJIdEqf+Myrg==}
+  /@types/node@20.10.2:
+    resolution: {integrity: sha512-37MXfxkb0vuIlRKHNxwCkb60PNBpR94u4efQuN4JgIAm66zfCDXGSAFCef9XUWFovX2R1ok6Z7MHhtdVXXkkIw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -1250,6 +1250,7 @@ packages:
 
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+    requiresBuild: true
     dev: false
 
   /before-after-hook@2.2.3:
@@ -1280,6 +1281,7 @@ packages:
 
   /brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
+    requiresBuild: true
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
@@ -1442,6 +1444,7 @@ packages:
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    requiresBuild: true
     dev: false
 
   /config-chain@1.1.13:
@@ -2134,6 +2137,7 @@ packages:
   /estraverse@5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
+    requiresBuild: true
     dev: false
 
   /estree-walker@3.0.3:
@@ -2743,6 +2747,7 @@ packages:
   /is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
 
   /is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
