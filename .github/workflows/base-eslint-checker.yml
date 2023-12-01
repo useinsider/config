@@ -20,10 +20,10 @@ jobs:
               || echo 'false' \
           )" >> $GITHUB_OUTPUT
 
-      - name: Checkout develop branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-            ref: develop
+            ref: main
 
       - name: Checkout current branch
         uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
         # https://regex101.com/r/lJYMpM/1
         run: >
           echo "files=$(\
-            git diff-tree --diff-filter=ACM --no-commit-id --name-only -r origin/develop..$(git rev-parse HEAD) . | \
+            git diff-tree --diff-filter=ACM --no-commit-id --name-only -r origin/main..$(git rev-parse HEAD) . | \
             grep -iE '(\.(([mc]?j|t)s|json)$|pnpm-lock\.ya?ml)' | \
             xargs\
           )" >> $GITHUB_OUTPUT
