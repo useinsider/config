@@ -4,6 +4,8 @@ on:
   push:
     branches-ignore:
       - main
+      - beta
+      - alpha
   workflow_call:
 
 concurrency:
