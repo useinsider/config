@@ -8,9 +8,13 @@
         "lint": "eslint --ext .js,.cjs ./",
         "lint:fix": "pnpm lint --fix"
     },
+    "homepage": "https://github.com/useinsider/eslint-config#readme",
     "repository": {
         "type": "git",
-        "url": "https://github.com/useinsider/eslint-config.git"
+        "url": "git+https://github.com/useinsider/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/useinsider/eslint-config/issues"
     },
     "exports": {
         ".": "./src/node.cjs",
@@ -26,6 +30,8 @@
     ],
     "devDependencies": {
         "@cspell/eslint-plugin": "8.0.0",
+        "@semantic-release/changelog": "6.0.3",
+        "@semantic-release/git": "10.0.1",
         "@stylistic/eslint-plugin": "1.4.1",
         "@stylistic/eslint-plugin-migrate": "1.4.1",
         "@types/eslint": "8.44.8",
