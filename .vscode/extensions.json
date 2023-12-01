@@ -1,8 +1,9 @@
 {
     "recommendations": [
-        "streetsidesoftware.code-spell-checker",
-        "dbaeumer.vscode-eslint",
-        "editorconfig.editorconfig",
-        "eamodio.gitlens"
+      "streetsidesoftware.code-spell-checker",
+      "dbaeumer.vscode-eslint",
+      "editorconfig.editorconfig",
+      "eamodio.gitlens",
+      "vivaxy.vscode-conventional-commits"
     ]
 }
