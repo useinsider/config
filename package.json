@@ -2,7 +2,7 @@
     "name": "@useinsider/eslint-config",
     "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "0.0.0-development",
     "packageManager": "pnpm@8.11.0",
     "scripts": {
         "lint": "eslint --ext .js,.cjs ./",
@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://useinsider/eslint-config.git"
+        "url": "https://github.com/useinsider/eslint-config.git"
     },
     "exports": {
         ".": "./src/node.cjs",
@@ -35,5 +35,8 @@
         "eslint-plugin-import": "2.29.0",
         "eslint-plugin-jsdoc": "46.9.0",
         "semantic-release": "22.0.8"
+    },
+    "publishConfig": {
+        "access": "restricted"
     }
 }
