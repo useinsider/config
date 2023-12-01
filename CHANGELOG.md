@@ -1,3 +1,11 @@
+## [1.0.1-beta.4](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.3...v1.0.1-beta.4) (2023-12-01)
+
+
+### Bug Fixes
+
+* Update @cspell/eslint-plugin version ([924e440](https://github.com/useinsider/eslint-config/commit/924e44015dc4097d2cb4b0c5b7f841688758ca9e))
+* Update @cspell/eslint-plugin version ([2f52af4](https://github.com/useinsider/eslint-config/commit/2f52af4960171a769bdbe64ecbb406e7416ed9da))
+
 ## [1.0.1-beta.3](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.2...v1.0.1-beta.3) (2023-12-01)
 
 
