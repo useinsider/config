@@ -1,3 +1,10 @@
+## [1.0.1-beta.3](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.2...v1.0.1-beta.3) (2023-12-01)
+
+
+### Bug Fixes
+
+* Update devDependencies in package.json ([57f9bdd](https://github.com/useinsider/eslint-config/commit/57f9bdd575536d3841d3c06a09532d19b142915a))
+
 ## [1.0.1-beta.2](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.1...v1.0.1-beta.2) (2023-12-01)
 
 
