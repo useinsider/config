@@ -25,7 +25,7 @@ module.exports = {
         ecmaFeatures: {
             jsx: true,
         },
-        extraFileExtensions: ['.vue', 'gs'],
+        extraFileExtensions: ['.vue'],
     },
     rules: {
         'jsdoc/require-param': 'off',
