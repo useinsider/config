@@ -1,6 +1,8 @@
 name: Lint files (primary)
 
-on: push
+on:
+  push:
+  workflow_call:
 
 concurrency:
   group: lint-primary-${{ github.event.pull_request.number || github.ref }}

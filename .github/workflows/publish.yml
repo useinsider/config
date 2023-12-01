@@ -1,18 +1,24 @@
 name: Publish
 
 on:
-  workflow_run:
-    workflows: ["Lint files (primary)"]
-    types:
-      - completed
-    branches: [main]
+  push:
+    branches:
+      - main
+  # workflow_run:
+  #   workflows: ["Lint files (primary)"]
+  #   types:
+  #     - completed
+  #   branches: [main]
 
 permissions:
   contents: read
 
 jobs:
+  lint:
+    uses: ./.github/workflows/lint-primary.yml
   release:
     name: Release
+    needs: lint
     runs-on: ubuntu-latest
     permissions:
       contents: write
