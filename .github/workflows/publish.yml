@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   lint:
+    name: Lint
     uses: ./.github/workflows/lint-primary.yml
   release:
     name: Release
