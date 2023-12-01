@@ -1,3 +1,10 @@
+## [1.0.1-beta.2](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.1...v1.0.1-beta.2) (2023-12-01)
+
+
+### Bug Fixes
+
+* Add .gs file extension to extraFileExtensions ([8b861f3](https://github.com/useinsider/eslint-config/commit/8b861f36bddbc1860e1cc00fbab32b809a0c0c7e))
+
 ## [1.0.1-beta.1](https://github.com/useinsider/eslint-config/compare/v1.0.0...v1.0.1-beta.1) (2023-12-01)
 
 
