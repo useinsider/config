@@ -1,3 +1,10 @@
+## [1.0.1-beta.6](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.5...v1.0.1-beta.6) (2023-12-02)
+
+
+### Bug Fixes
+
+* Remove unused token from workflow ([6f560cf](https://github.com/useinsider/eslint-config/commit/6f560cfaf7e3096e127af47d3ae95be152561875))
+
 ## [1.0.1-beta.5](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.4...v1.0.1-beta.5) (2023-12-02)
 
 
