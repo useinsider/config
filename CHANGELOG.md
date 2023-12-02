@@ -1,3 +1,11 @@
+## [1.0.1-beta.7](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.6...v1.0.1-beta.7) (2023-12-02)
+
+
+### Bug Fixes
+
+* Update GITHUB_TOKEN in publish.yml ([2090773](https://github.com/useinsider/eslint-config/commit/209077394815b2fda2de515dad0c2bff3b83d7d8))
+* Update runs-on to self-runner-node16 and GITHUB_TOKEN ([f8d6cab](https://github.com/useinsider/eslint-config/commit/f8d6cab42b1d72a15a27bc397bcda523d9494d16))
+
 ## [1.0.1-beta.6](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.5...v1.0.1-beta.6) (2023-12-02)
 
 
