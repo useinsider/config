@@ -29,7 +29,6 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-          token: ${{ secrets.SEMANTIC_RELEASE }}
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
