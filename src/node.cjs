@@ -9,4 +9,7 @@ module.exports = {
         require.resolve('./rules/stylistic.cjs'),
         require.resolve('./rules/jsdoc.cjs'),
     ],
+    env: {
+        node: true,
+    },
 };
