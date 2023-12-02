@@ -2,6 +2,7 @@
 module.exports = {
     extends: [
         require.resolve('./base.cjs'),
+        'airbnb-base',
         'airbnb-typescript/base',
         'plugin:@cspell/recommended',
         'plugin:jsdoc/recommended',
@@ -15,13 +16,17 @@ module.exports = {
     ],
     plugins: ['@typescript-eslint'],
     env: {
-        node: true,
+        browser: true,
         es2021: true,
     },
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true,
+        },
+        extraFileExtensions: ['.vue', 'gs'],
     },
     rules: {
         'jsdoc/require-param': 'off',
