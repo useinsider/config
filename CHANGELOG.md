@@ -1,3 +1,12 @@
+## [1.0.1-beta.5](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.4...v1.0.1-beta.5) (2023-12-02)
+
+
+### Bug Fixes
+
+* Add node environment to ESLint config ([8e49e4e](https://github.com/useinsider/eslint-config/commit/8e49e4e58397ef7f609f1dfca34b47bb00d8a6c9))
+* Disable credential persistence in GitHub Actions workflow ([718f3e3](https://github.com/useinsider/eslint-config/commit/718f3e37ebb56f7d4385d616805e6358703476c4))
+* Update GitHub token in publish workflow ([91d9d83](https://github.com/useinsider/eslint-config/commit/91d9d83744ef346b38f7b11bbe0768a46ee6d870))
+
 ## [1.0.1-beta.4](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.3...v1.0.1-beta.4) (2023-12-01)
 
 
