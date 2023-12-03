@@ -1,0 +1,33 @@
+name: Lint files
+
+on:
+  workflow_call:
+  push:
+    branches-ignore:
+      - main
+      - beta
+      - alpha
+
+concurrency:
+  group: lint-files-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-primary:
+    uses: ./.github/workflows/base-eslint-checker.yml
+    strategy:
+      matrix:
+        node-version: [20]
+    with:
+      node-version: ${{ matrix.node-version }}
+      is-primary-version: true
+  lint-rest:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    needs: lint-primary
+    uses: ./.github/workflows/base-eslint-checker.yml
+    strategy:
+      matrix:
+        node-version: [16, 18, 'latest']
+    with:
+      node-version: ${{ matrix.node-version }}
+      is-primary-version: false
