@@ -19,7 +19,7 @@ jobs:
   setVariables:
     runs-on: self-hosted
     outputs:
-      isPrimalBranch: ${{ steps.set-variables.outputs.isPrimalBranch == 'true' }}
+      isPrimalBranch: ${{ steps.set-variables.outputs.isPrimalBranch }}
     steps:
       - name: Set variables
         id: set-variables
@@ -32,7 +32,7 @@ jobs:
       matrix:
         node-version: [20]
     with:
-      isPrimalBranch: ${{ needs.setVariables.outputs.isPrimalBranch }}
+      isPrimalBranch: ${{ needs.setVariables.outputs.isPrimalBranch == 'true' }}
       isPrimaryVersion: true
       nodeVersion: ${{ matrix.node-version }}
   print-it:
@@ -51,6 +51,6 @@ jobs:
       matrix:
         node-version: [16, 18, 'latest']
     with:
-      isPrimalBranch: ${{ needs.setVariables.outputs.isPrimalBranch }}
+      isPrimalBranch: false
       isPrimaryVersion: false
       nodeVersion: ${{ matrix.node-version }}
