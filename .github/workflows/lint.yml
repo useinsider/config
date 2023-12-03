@@ -1,4 +1,4 @@
-name: Lint files (primary)
+name: Lint files
 
 on:
   workflow_call:
@@ -9,7 +9,7 @@ on:
       - alpha
 
 concurrency:
-  group: lint-primary-${{ github.event.pull_request.number || github.ref }}
+  group: lint-files-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
