@@ -63,26 +63,20 @@ jobs:
       - name: Lint files
         if: |
           steps.determineBranch.outputs.isPrimalBranch == 'true' ||
-          (
-            steps.prDetails.outputs.pr_found != 'true' ||
-            inputs.node-version != 20
-          )
+          !inputs.is-primary-version
         run: pnpm lint
 
       - name: Lint files for PR
         if: |
           steps.determineBranch.outputs.isPrimalBranch == 'false' &&
-          steps.prDetails.outputs.pr_found == 'true' &&
-          inputs.node-version == 20
+          inputs.is-primary-version
         run: pnpm lint:fix
 
       - name: Commit auto-fixes
         if: |
           always() &&
           inputs.is-primary-version &&
-          steps.determineBranch.outputs.isPrimalBranch == 'false' &&
-          steps.prDetails.outputs.pr_title &&
-          inputs.node-version == 20
+          steps.determineBranch.outputs.isPrimalBranch == 'false'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "${{ steps.prDetails.outputs.pr_title }} | Files linted"
+          commit_message: "Files linted"
