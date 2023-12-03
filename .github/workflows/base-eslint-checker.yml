@@ -45,7 +45,6 @@ jobs:
             xargs\
           )" >> $GITHUB_OUTPUT
 
-
       - if: steps.determineBranch.outputs.isPrimalBranch == 'false' && steps.filteredChanges.outputs.files == ''
         run: echo "The branch doesn't contain logic files. Passing on linting..." >> $GITHUB_STEP_SUMMARY
 
