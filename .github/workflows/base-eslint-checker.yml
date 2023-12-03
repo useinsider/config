@@ -13,6 +13,8 @@ on:
 jobs:
   lint:
     runs-on: self-runner-node16
+    outputs:
+      isPrimalBranch: ${{ steps.determineBranch.outputs.isPrimalBranch }}
     steps:
       - name: Determine branch
         id: determineBranch
