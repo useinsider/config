@@ -1,3 +1,10 @@
+## [1.0.1-beta.8](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.7...v1.0.1-beta.8) (2023-12-03)
+
+
+### Bug Fixes
+
+* add missing ecma-version ([229ffeb](https://github.com/useinsider/eslint-config/commit/229ffebc672e7852644ea197ec371cb90afc33c5))
+
 ## [1.0.1-beta.7](https://github.com/useinsider/eslint-config/compare/v1.0.1-beta.6...v1.0.1-beta.7) (2023-12-02)
 
 
