@@ -14,11 +14,6 @@ jobs:
   lint:
     runs-on: self-runner-node16
     steps:
-      - run: echo ${{inputs.is-primary-version}}
-      - run: echo ${{inputs.is-primary-version == 'true'}}}
-      - run: echo ${{inputs.is-primary-version == true}}}
-      - run: echo ${{inputs.is-primary-version == false}}}
-      - run: echo ${{inputs.is-primary-version == 'false'}}}
       - name: Determine branch
         id: determineBranch
         run: >
@@ -62,14 +57,14 @@ jobs:
 
       - name: Lint files
         if: |
-          steps.determineBranch.outputs.isPrimalBranch == 'true' ||
-          !inputs.is-primary-version
+          ${{ !inputs.is-primary-version }} ||
+          steps.determineBranch.outputs.isPrimalBranch == 'true'
         run: pnpm lint
 
       - name: Lint files for PR
         if: |
-          steps.determineBranch.outputs.isPrimalBranch == 'false' &&
-          inputs.is-primary-version
+          inputs.is-primary-version &&
+          steps.determineBranch.outputs.isPrimalBranch == 'false'
         run: pnpm lint:fix
 
       - name: Commit auto-fixes

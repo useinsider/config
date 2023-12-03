@@ -13,6 +13,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  print-it:
+    runs-on: self-runner-node16
+    steps:
+      - run: echo ${{ github.event_name }}
   lint-primary:
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
@@ -22,7 +26,7 @@ jobs:
       node-version: ${{ matrix.node-version }}
       is-primary-version: true
   lint-rest:
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    if: github.event_name == 'push'
     needs: lint-primary
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
