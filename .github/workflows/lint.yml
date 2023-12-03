@@ -36,14 +36,6 @@ jobs:
       isPrimalBranch: ${{ needs.setVariables.outputs.isPrimalBranch == 'true' }}
       isPrimaryVersion: true
       nodeVersion: ${{ matrix.node-version }}
-  print-it:
-    needs: setVariables
-    runs-on: self-runner-node16
-    steps:
-      - run: echo ${{ github.event_name }}
-      - run: echo ${{ needs.setVariables.outputs.isPrimalBranch }}
-      - run: echo ${{ needs.setVariables.outputs.isPrimalBranch == 'true' }}
-      - run: echo ${{ needs.setVariables.outputs.isPrimalBranch == 'false' }}
   lint-rest:
     needs: [setVariables, lint-primary]
     if: ${{github.event_name == 'push' && needs.setVariables.outputs.isPrimalBranch == 'false'}}
