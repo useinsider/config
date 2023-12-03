@@ -1,6 +1,7 @@
 name: Lint files (primary)
 
 on:
+  workflow_call:
   push:
     branches-ignore:
       - main
@@ -13,17 +14,24 @@ on:
       - alpha
     types:
       - opened
-  workflow_call:
 
 concurrency:
   group: lint-primary-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
-  lint:
+  lint-primary:
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
       matrix:
         node-version: [20]
+    with:
+      node-version: ${{ matrix.node-version }}
+  lint-rest:
+    needs: lint-primary
+    uses: ./.github/workflows/base-eslint-checker.yml
+    strategy:
+      matrix:
+        node-version: [16, 18, 'latest']
     with:
       node-version: ${{ matrix.node-version }}
