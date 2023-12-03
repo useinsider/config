@@ -20,6 +20,7 @@ jobs:
         node-version: [20]
     with:
       node-version: ${{ matrix.node-version }}
+      is-primary-version: true
   lint-rest:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
     needs: lint-primary
@@ -29,3 +30,4 @@ jobs:
         node-version: [16, 18, 'latest']
     with:
       node-version: ${{ matrix.node-version }}
+      is-primary-version: false

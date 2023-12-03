@@ -6,11 +6,19 @@ on:
       node-version:
         required: true
         type: string
+      is-primary-version:
+        required: true
+        type: boolean
 
 jobs:
   lint:
     runs-on: self-runner-node16
     steps:
+      - run: echo ${{inputs.is-primary-version}}
+      - run: echo ${{inputs.is-primary-version == 'true'}}}
+      - run: echo ${{inputs.is-primary-version == true}}}
+      - run: echo ${{inputs.is-primary-version == false}}}
+      - run: echo ${{inputs.is-primary-version == 'false'}}}
       - name: Determine branch
         id: determineBranch
         run: >
@@ -71,6 +79,7 @@ jobs:
       - name: Commit auto-fixes
         if: |
           always() &&
+          inputs.is-primary-version &&
           steps.determineBranch.outputs.isPrimalBranch == 'false' &&
           steps.prDetails.outputs.pr_title &&
           inputs.node-version == 20
