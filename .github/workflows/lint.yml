@@ -12,6 +12,9 @@ concurrency:
   group: lint-files-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+env:
+  isPrimalBranch:  ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha' }}
+
 jobs:
   lint-primary:
     uses: ./.github/workflows/base-eslint-checker.yml
@@ -26,9 +29,9 @@ jobs:
     runs-on: self-runner-node16
     steps:
       - run: echo ${{ github.event_name }}
-      - run: echo ${{ needs.lint-primary.outputs.isPrimalBranch }}
+      - run: echo ${{ env.isPrimalBranch }}
   lint-rest:
-    if: github.event_name == 'push' && needs.lint-primary.outputs.isPrimalBranch == 'false'
+    if: github.event_name == 'push' && env.isPrimalBranch == 'false'
     needs: lint-primary
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
