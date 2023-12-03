@@ -17,13 +17,14 @@
         "url": "https://github.com/useinsider/eslint-config/issues"
     },
     "exports": {
-        ".": "./src/node.cjs",
-        "./dom": "./src/dom.cjs",
-        "./typescript": "./src/typescript.cjs",
-        "./typescript-dom": "./src/typescript-dom.cjs",
-        "./vue3": "./src/vue3.cjs",
-        "./node": "./src/node.cjs",
-        "./config": "./src/config.cjs"
+        ".": "./src/node/index.cjs",
+        "./node": "./src/node/index.cjs",
+        "./config": "./src/config/index.cjs",
+        "./dom": "./src/dom/index.cjs",
+        "./typescript": "./src/typescript/index.cjs",
+        "./typescript-dom": "./src/typescript-dom/index.cjs",
+        "./vue3": "./src/vue3/index.cjs",
+        "./vue3-typescript": "./src/vue3-typescript/index.cjs"
     },
     "files": [
         "src/**/*"

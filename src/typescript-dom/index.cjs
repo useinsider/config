@@ -1,7 +1,7 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
     extends: [
-        require.resolve('./base.cjs'),
+        require.resolve('../base.cjs'),
         'airbnb-base',
         'airbnb-typescript/base',
         'plugin:@cspell/recommended',
@@ -9,16 +9,16 @@ module.exports = {
         'plugin:jsdoc/recommended-typescript-error',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        require.resolve('./rules/agnostic.cjs'),
-        require.resolve('./rules/stylistic.cjs'),
-        require.resolve('./rules/jsdoc.cjs'),
-        require.resolve('./rules/typescript.cjs'),
+        require.resolve('../rules/core.cjs'),
+        require.resolve('../rules/stylistic.cjs'),
+        require.resolve('../rules/jsdoc.cjs'),
+        require.resolve('../rules/typescript.cjs'),
     ],
-    plugins: ['@typescript-eslint'],
     env: {
         browser: true,
         es2021: true,
     },
+    plugins: ['@typescript-eslint'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
@@ -26,7 +26,7 @@ module.exports = {
         ecmaFeatures: {
             jsx: true,
         },
-        extraFileExtensions: ['.vue', 'gs'],
+        extraFileExtensions: ['.vue'],
     },
     rules: {
         'jsdoc/require-param': 'off',

@@ -1,7 +1,7 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
     extends: [
-        require.resolve('./base.cjs'),
+        require.resolve('../base.cjs'),
         'airbnb-typescript/base',
         'plugin:vue/vue3-recommended',
         'plugin:vue-scoped-css/vue3-recommended',
@@ -10,11 +10,11 @@ module.exports = {
         'plugin:@cspell/recommended',
         '@vue/eslint-config-typescript',
         'plugin:@typescript-eslint/recommended',
-        require.resolve('./rules/agnostic.cjs'),
-        require.resolve('./rules/stylistic.cjs'),
-        require.resolve('./rules/jsdoc.cjs'),
-        require.resolve('./rules/vue.cjs'),
-        require.resolve('./rules/typescript.cjs'),
+        require.resolve('../rules/core.cjs'),
+        require.resolve('../rules/stylistic.cjs'),
+        require.resolve('../rules/jsdoc.cjs'),
+        require.resolve('../rules/vue.cjs'),
+        require.resolve('../rules/typescript.cjs'),
     ],
     plugins: ['@typescript-eslint'],
     env: {
