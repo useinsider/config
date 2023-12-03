@@ -6,6 +6,13 @@ on:
       - main
       - beta
       - alpha
+  pull_request:
+    branches-ignore:
+      - main
+      - beta
+      - alpha
+    types:
+      - opened
   workflow_call:
 
 concurrency:
