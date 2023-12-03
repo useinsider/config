@@ -29,19 +29,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        if: steps.determineBranch.outputs.isPrimalBranch == 'true'
-        with:
-          run_install: false
-
-      - name: Use NodeJS
-        if: steps.determineBranch.outputs.isPrimalBranch == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ inputs.node-version }}
-          cache: pnpm
-
       - name: Find PR
         uses: 8BitJonny/gh-get-current-pr@2.2.0
         if: steps.determineBranch.outputs.isPrimalBranch == 'false'
@@ -51,8 +38,18 @@ jobs:
           sha: ${{ github.event.pull_request.head.sha }}
           filterOutClosed: true
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+
+      - name: Use NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: pnpm
+
       - name: Install dependencies
-        if: steps.determineBranch.outputs.isPrimalBranch == 'true'
         run: pnpm install
 
       - name: Lint files
