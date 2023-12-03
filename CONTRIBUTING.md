@@ -4,9 +4,9 @@
 - [Contributing to the Project](#contributing-to-the-project)
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
-    - [`src/*.cjs` files](#srccjs-files)
+    - [`src/**/index.cjs` files](#srcindexcjs-files)
     - [`src/rules/*.cjs` files](#srcrulescjs-files)
-      - [`agnostic.cjs`](#agnosticcjs)
+      - [`core.cjs`](#corecjs)
   - [Development](#development)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
@@ -25,18 +25,19 @@
 Public config file paths are in `exports` in
 [package.json](package.json#exports).
 
-### [`src/*.cjs`](./src/) files
+### [`src/**/index.cjs`](./src/) files
 
-These are sets of rules extending third-party libraries and
-[`rules`](./src/rules/). They are accessible to users.
+These are consumable (exported publicly) files that has sets of rules extending
+third-party libraries and [`rules`](./src/rules/).
 
 ### [`src/rules/*.cjs`](./src/rules/) files
 
 Files here contain rules serving the purpose indicated by their names.
 
-#### [`agnostic.cjs`](./src/rules/agnostic.cjs)
+#### [`core.cjs`](./src/rules/core.cjs)
 
-Contains ESLint-maintained rules, free of external library dependencies.
+Contains ESLint-maintained core-level rules, free of external library
+dependencies.
 
 ## Development
 
@@ -100,7 +101,6 @@ Use the following format: `<type>(<scope>): <description>`
 
 For help crafting compliant messages, use the [Commitlint] web form or install
 the `Conventional Commits` VSCode extension recommended by the project.
-
 
 [Conventional Commits]: https://www.conventionalcommits.org/
 [semantic release]: https://github.com/semantic-release/semantic-release
