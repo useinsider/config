@@ -10,10 +10,12 @@ development workflow.
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
     - [Installation](#installation)
+  - [Versioning Policy](#versioning-policy)
   - [Available Configurations](#available-configurations)
-    - [Upcoming Configurations](#upcoming-configurations)
+    - [Vanilla 🍦](#vanilla-)
+    - [Framework-specific](#framework-specific)
+    - [⏳ Upcoming Configurations](#-upcoming-configurations)
   - [Contributing](#contributing)
-
 
 ## Getting Started
 
@@ -32,8 +34,11 @@ using the `-D` and `-E` flags in your package manager commands.
      ```bash
      pnpm add -D -E @useinsider/eslint-config
      ```
+2. **Create an ESLint config file:**
+   You'll need an ESLint config file in your projects root directory.
 
-2. **Extend the Configuration:**
+   You can check the official [ESLint documentation] to get more details.
+3. **Extend the Configuration:**
    Add the following to your `.eslintrc` file to extend the configuration:
     ```json5
     {
@@ -42,25 +47,42 @@ using the `-D` and `-E` flags in your package manager commands.
     }
     ```
 
+[ESLint documentation]: https://eslint.org/docs/latest/use/configure/configuration-files
+
+## Versioning Policy
+
+This plugin follows [Semantic Versioning](https://semver.org) policy.
+
 ## Available Configurations
 
 We provide a variety of configurations to suit different environments and
 frameworks. Here's a list of available configurations:
 
-| Environment       | Browser                                                                | Node                                                                                                |
-| :---------------- | :--------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| **EcmaScript/JS** | [`@useinsider/eslint-config/dom`](./src/dom.cjs)                       | [`@useinsider/eslint-config`](./src/node.cjs)<br>[`@useinsider/eslint-config/node`](./src/node.cjs) |
-| **TypeScript**    | [`@useinsider/eslint-config/typescript-dom`](./src/typescript-dom.cjs) | [`@useinsider/eslint-config/typescript`](./src/typescript.cjs)                                      |
-| **Vue 3**         | [`@useinsider/eslint-config/vue3`](./src/vue3.cjs)                     | -                                                                                                   |
+### Vanilla 🍦
 
-### Upcoming Configurations
+| Environment       | Browser (DOM)                                                             | Node                                                                                                      |
+| :---------------- | :------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------- |
+| **EcmaScript/JS** | [`@useinsider/eslint-config/dom`](./src/dom#readme)                       | [`@useinsider/eslint-config`](./src/node#readme)<br>[`@useinsider/eslint-config/node`](./src/node#readme) |
+| **TypeScript**    | [`@useinsider/eslint-config/typescript-dom`](./src/typescript-dom#readme) | [`@useinsider/eslint-config/typescript`](./src/typescript#readme)                                         |
+| **Config files**  |                                                                           | [`@useinsider/eslint-config/config`](./src/config#readme)                                                 |
+
+### Framework-specific
+
+| Environment | JavaScript                                            | TypeScript                                                                  |
+| :---------- | :---------------------------------------------------- | :-------------------------------------------------------------------------- |
+| **Vue 3**   | [`@useinsider/eslint-config/vue3`](./src/vue3#readme) | [`@useinsider/eslint-config/vue3-typescript`](./src/vue3-typescript#readme) |
+
+### ⏳ Upcoming Configurations
 
 Not available yet!
 
-| Environment       | Browser                                                        | Node                                                   |
-| :---------------- | :------------------------------------------------------------- | :----------------------------------------------------- |
-| **Legacy ES5 💀​** | [`@useinsider/eslint-config/legacy-dom`](./src/legacy-dom.cjs) | [`@useinsider/eslint-config/legacy`](./src/legacy.cjs) |
-| **Vue 2**         | [`@useinsider/eslint-config/vue2`](./src/vue2.cjs)             | -                                                      |
+| Environment       | Browser (DOM)                                                     | Node                                                      |
+| :---------------- | :---------------------------------------------------------------- | :-------------------------------------------------------- |
+| **Legacy ES5 💀​** | [`@useinsider/eslint-config/legacy-dom`](./src/legacy-dom#readme) | [`@useinsider/eslint-config/legacy`](./src/legacy#readme) |
+
+| Environment | JavaScript                                            | TypeScript                                                                  |
+| :---------- | :---------------------------------------------------- | :-------------------------------------------------------------------------- |
+| **Vue 2**   | [`@useinsider/eslint-config/vue2`](./src/vue2#readme) | [`@useinsider/eslint-config/vue2-typescript`](./src/vue2-typescript#readme) |
 
 ## Contributing
 

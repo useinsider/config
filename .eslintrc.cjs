@@ -2,7 +2,7 @@
 module.exports = {
     root: true,
     extends: [
-        require.resolve('./src/node.cjs'),
+        require.resolve('./src/node/index.cjs'),
     ],
     rules: {
         '@cspell/spellchecker': ['error', {
