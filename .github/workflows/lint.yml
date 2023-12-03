@@ -21,7 +21,11 @@ jobs:
       - name: Set variables
         id: set-variables
         run: |
-          echo "isPrimalBranch=${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha' }}" >> $GITHUB_OUTPUT
+          echo "isPrimalBranch=${{
+            github.ref == 'refs/heads/main'
+            || github.ref == 'refs/heads/beta'
+            || github.ref == 'refs/heads/alpha'
+          }}" >> $GITHUB_OUTPUT
   lint-primary:
     needs: setVariables
     uses: ./.github/workflows/base-eslint-checker.yml
