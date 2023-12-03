@@ -1,0 +1,49 @@
+name: Lint files
+
+on:
+  workflow_call:
+  push:
+    branches-ignore:
+      - main
+      - beta
+      - alpha
+
+concurrency:
+  group: lint-files-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  setVariables:
+    runs-on: self-hosted
+    outputs:
+      isPrimalBranch: ${{ steps.set-variables.outputs.isPrimalBranch }}
+    steps:
+      - name: Set variables
+        id: set-variables
+        run: |
+          echo "isPrimalBranch=${{
+            github.ref == 'refs/heads/main'
+            || github.ref == 'refs/heads/beta'
+            || github.ref == 'refs/heads/alpha'
+          }}" >> $GITHUB_OUTPUT
+  lint-primary:
+    needs: setVariables
+    uses: ./.github/workflows/base-eslint-checker.yml
+    strategy:
+      matrix:
+        node-version: [20]
+    with:
+      isPrimalBranch: ${{ needs.setVariables.outputs.isPrimalBranch == 'true' }}
+      isPrimaryVersion: true
+      nodeVersion: ${{ matrix.node-version }}
+  lint-rest:
+    needs: [setVariables, lint-primary]
+    if: ${{github.event_name == 'push' && needs.setVariables.outputs.isPrimalBranch == 'false'}}
+    uses: ./.github/workflows/base-eslint-checker.yml
+    strategy:
+      matrix:
+        node-version: [16, 18, 'latest']
+    with:
+      isPrimalBranch: false
+      isPrimaryVersion: false
+      nodeVersion: ${{ matrix.node-version }}

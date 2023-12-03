@@ -7,13 +7,17 @@ on:
       - beta
       - alpha
 
+concurrency:
+  group: publish-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
 jobs:
   lint:
     name: Lint
-    uses: ./.github/workflows/lint-primary.yml
+    uses: ./.github/workflows/lint.yml
   release:
     name: Release
     needs: lint
