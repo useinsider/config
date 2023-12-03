@@ -3,32 +3,20 @@ name: Reusable Lint Workflow
 on:
   workflow_call:
     inputs:
-      node-version:
-        required: true
-        type: string
-      is-primary-version:
+      isPrimalBranch:
         required: true
         type: boolean
+      isPrimaryVersion:
+        required: true
+        type: boolean
+      nodeVersion:
+        required: true
+        type: string
 
 jobs:
   lint:
     runs-on: self-runner-node16
-    outputs:
-      isPrimalBranch: ${{ steps.determineBranch.outputs.isPrimalBranch }}
     steps:
-      - name: Determine branch
-        id: determineBranch
-        run: >
-          echo "isPrimalBranch=$( \
-            [[ \
-              '${{ github.ref }}' == 'refs/heads/main' \
-              || '${{ github.ref }}' == 'refs/heads/beta' \
-              || '${{ github.ref }}' == 'refs/heads/alpha' \
-            ]] \
-              && echo 'true' \
-              || echo 'false' \
-          )" >> $GITHUB_OUTPUT
-
       - name: Checkout current branch
         uses: actions/checkout@v4
         with:
@@ -36,7 +24,7 @@ jobs:
 
       - name: Find PR
         uses: 8BitJonny/gh-get-current-pr@2.2.0
-        if: steps.determineBranch.outputs.isPrimalBranch == 'false'
+        if: inputs.isPrimalBranch == 'false'
         id: prDetails
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -51,7 +39,7 @@ jobs:
       - name: Use NodeJS
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ inputs.node-version }}
+          node-version: ${{ inputs.nodeVersion }}
           cache: pnpm
 
       - name: Install dependencies
@@ -59,21 +47,21 @@ jobs:
 
       - name: Lint files
         if: |
-          ${{ !inputs.is-primary-version }} ||
-          steps.determineBranch.outputs.isPrimalBranch == 'true'
+          ${{ !inputs.isPrimaryVersion }} ||
+          inputs.isPrimalBranch == 'true'
         run: pnpm lint
 
       - name: Lint files for PR
         if: |
-          inputs.is-primary-version &&
-          steps.determineBranch.outputs.isPrimalBranch == 'false'
+          inputs.isPrimaryVersion &&
+          inputs.isPrimalBranch == 'false'
         run: pnpm lint:fix
 
       - name: Commit auto-fixes
         if: |
           always() &&
-          inputs.is-primary-version &&
-          steps.determineBranch.outputs.isPrimalBranch == 'false'
+          inputs.isPrimaryVersion &&
+          inputs.isPrimalBranch == 'false'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Files linted"

@@ -16,26 +16,39 @@ env:
   isPrimalBranch:  ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha' }}
 
 jobs:
+  setVariables:
+    runs-on: self-hosted
+    outputs:
+      isPrimalBranch: ${{ steps.set-variables.outputs.isPrimalBranch == 'true' }}
+    steps:
+      - name: Set variables
+        id: set-variables
+        run: |
+          echo "isPrimalBranch=${{ env.isPrimalBranch }}" >> $GITHUB_OUTPUT
   lint-primary:
+    needs: setVariables
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
       matrix:
         node-version: [20]
     with:
-      node-version: ${{ matrix.node-version }}
-      is-primary-version: true
+      isPrimalBranch: ${{ needs.setVariables.outputs.isPrimalBranch }}
+      isPrimaryVersion: true
+      nodeVersion: ${{ matrix.node-version }}
   print-it:
+    needs: setVariables
     runs-on: self-runner-node16
     steps:
       - run: echo ${{ github.event_name }}
-      - run: echo ${{ env.isPrimalBranch }}
+      - run: echo ${{ needs.setVariables.outputs.isPrimalBranch }}
   lint-rest:
-    if: github.event_name == 'push'
-    needs: lint-primary
+    needs: [setVariables, lint-primary]
+    if: ${{github.event_name == 'push' && needs.setVariables.outputs.isPrimalBranch == 'false'}}
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
       matrix:
         node-version: [16, 18, 'latest']
     with:
-      node-version: ${{ matrix.node-version }}
-      is-primary-version: false
+      isPrimalBranch: ${{ needs.setVariables.outputs.isPrimalBranch }}
+      isPrimaryVersion: false
+      nodeVersion: ${{ matrix.node-version }}
