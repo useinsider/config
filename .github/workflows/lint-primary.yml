@@ -7,13 +7,6 @@ on:
       - main
       - beta
       - alpha
-  pull_request:
-    branches-ignore:
-      - main
-      - beta
-      - alpha
-    types:
-      - opened
 
 concurrency:
   group: lint-primary-${{ github.event.pull_request.number || github.ref }}
