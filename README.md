@@ -51,7 +51,7 @@ using the `-D` and `-E` flags in your package manager commands.
 
 ## Versioning Policy
 
-This plugin follows [Semantic Versioning](https://semver.org) policy.
+This project follows the [Semantic Versioning](https://semver.org) policy.
 
 ## Available Configurations
 
@@ -86,6 +86,5 @@ Not available yet!
 
 ## Contributing
 
-Your contributions are welcome!
-Please consult the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how
-to contribute to this project.
+Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on
+how to contribute to this project.
