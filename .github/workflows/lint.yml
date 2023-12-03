@@ -25,13 +25,12 @@ jobs:
       node-version: ${{ matrix.node-version }}
       is-primary-version: true
   print-it:
-    needs: lint-primary
     runs-on: self-runner-node16
     steps:
       - run: echo ${{ github.event_name }}
       - run: echo ${{ env.isPrimalBranch }}
   lint-rest:
-    if: github.event_name == 'push' && env.isPrimalBranch == 'false'
+    if: github.event_name == 'push'
     needs: lint-primary
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
