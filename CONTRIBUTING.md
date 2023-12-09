@@ -3,6 +3,8 @@
 ## Table of Contents
 - [Contributing to the Project](#contributing-to-the-project)
   - [Table of Contents](#table-of-contents)
+  - [Reporting an Issue](#reporting-an-issue)
+  - [Adding a New Rule](#adding-a-new-rule)
   - [Project Structure](#project-structure)
     - [`src/**/index.cjs` files](#srcindexcjs-files)
     - [`src/rules/*.cjs` files](#srcrulescjs-files)
@@ -19,6 +21,18 @@
       - [Documentation Branches](#documentation-branches)
     - [Commit Naming](#commit-naming)
     - [Pull Request](#pull-request)
+
+## Reporting an Issue
+
+If you have any trouble with a rule set, dependency or a test, feel free to
+report it in [issues](https://github.com/useinsider/eslint-config/issues).
+
+## Adding a New Rule
+
+Before introducing a new rule, please create a new discussion. Responsible team
+will evaluate your needs and the intention of its use cases. Since adding a new
+rule will always affect multiple projects and bring additional maintenance
+responsibility, we have to be picky about it.
 
 ## Project Structure
 
@@ -55,6 +69,8 @@ dependencies.
 ## Pushing Your Codes
 
 Refer to [`semantic-release`] for understanding the release procedure.
+The project has an automatic versioning procedure that bumps itself based on
+commit messages.
 
 [`semantic-release`]: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/release-workflow/pre-releases.md
 
