@@ -1,3 +1,10 @@
+# [@useinsider/eslint-config-v1.1.0](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.0.0...@useinsider/eslint-config@1.1.0) (2023-12-10)
+
+
+### Features
+
+* **eslint-config:** add checkJs option to tsconfig.json ([362ea9d](https://github.com/useinsider/config/commit/362ea9d3dc15f4a2db7549bae73bcf1537ad2b55))
+
 # @useinsider/eslint-config-v1.0.0 (2023-12-10)
 
 
