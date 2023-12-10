@@ -15,13 +15,13 @@
         "lint:fix": "pnpm lint --fix",
         "release": "semantic-release -e semantic-release-monorepo"
     },
-    "homepage": "https://github.com/useinsider/eslint-config#readme",
+    "homepage": "https://github.com/useinsider/config#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/useinsider/eslint-config.git"
+        "url": "git+https://github.com/useinsider/config.git"
     },
     "bugs": {
-        "url": "https://github.com/useinsider/eslint-config/issues"
+        "url": "https://github.com/useinsider/config/issues"
     },
     "exports": {
         ".": "./src/node/index.cjs",
