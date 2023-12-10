@@ -1,10 +1,18 @@
 {
     "name": "@useinsider/eslint-config",
     "version": "1.1.0",
+    "description": "A collection of ESLint configurations provided by @useinsider, offering support for various environments including Vanilla JS, TypeScript, and framework-specific setups such as Vue 3.",
     "keywords": [
         "useinsider",
         "eslint",
-        "eslint-config"
+        "eslint-config",
+        "lint",
+        "code style",
+        "vanilla",
+        "typescript",
+        "vue",
+        "vue3",
+        "node"
     ],
     "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
     "license": "MIT",
@@ -15,10 +23,11 @@
         "lint:fix": "pnpm lint --fix",
         "release": "semantic-release -e semantic-release-monorepo"
     },
-    "homepage": "https://github.com/useinsider/config#readme",
+    "homepage": "https://github.com/useinsider/config/tree/master/packages/eslint-config#readme",
     "repository": {
-        "type": "git",
-        "url": "git+https://github.com/useinsider/config.git"
+      "type": "git",
+      "url": "https://github.com/useinsider/config",
+      "directory": "packages/eslint-config"
     },
     "bugs": {
         "url": "https://github.com/useinsider/config/issues"
