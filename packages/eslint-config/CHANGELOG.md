@@ -1,3 +1,10 @@
+# [@useinsider/eslint-config-v1.0.0-beta.3](https://github.com/useinsider/eslint-config/compare/@useinsider/eslint-config@1.0.0-beta.2...@useinsider/eslint-config@1.0.0-beta.3) (2023-12-10)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove bypassed rules ([df29311](https://github.com/useinsider/eslint-config/commit/df29311a86feff7691313e8d53d2ab1616a83ee6))
+
 # [@useinsider/eslint-config-v1.0.0-beta.2](https://github.com/useinsider/eslint-config/compare/@useinsider/eslint-config@1.0.0-beta.1...@useinsider/eslint-config@1.0.0-beta.2) (2023-12-10)
 
 
