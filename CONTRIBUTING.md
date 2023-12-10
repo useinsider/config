@@ -8,6 +8,7 @@
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
   - [Pushing Your Codes](#pushing-your-codes)
+  - [Code Release Process](#code-release-process)
     - [Creating a Branch](#creating-a-branch)
       - [Feature Branches](#feature-branches)
       - [Bugfix Branches](#bugfix-branches)
@@ -28,6 +29,9 @@ report it in [issues](https://github.com/useinsider/eslint-config/issues).
 
 - Node.JS 16+ ([nvm recommended](https://github.com/nvm-sh/nvm#readme))
 - [pnpm installation](https://pnpm.io/installation)
+- Understanding the [`semantic-release`'s Release Workflow]
+
+[`semantic-release`'s Release Workflow]: https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow
 
 ### Installation
 
@@ -37,11 +41,16 @@ report it in [issues](https://github.com/useinsider/eslint-config/issues).
 
 ## Pushing Your Codes
 
-Refer to [`semantic-release`] for understanding the release procedure.
-The project has an automatic versioning procedure that bumps itself based on
-commit messages.
+## Code Release Process
 
-[`semantic-release`]: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/release-workflow/pre-releases.md
+This project strictly follows the Conventional Commits specifications.
+
+For detailed guidance on the release procedure, please consult the
+[`semantic-release` documentation]. Our project employs an automated versioning
+system, which upgrades the version based on the commit messages.
+
+
+[`semantic-release` documentation]: https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow/pre-releases
 
 ### Creating a Branch
 
