@@ -11,8 +11,9 @@
         "build": "pnpm -r --stream build",
         "lint": "pnpm -r --stream lint",
         "lint:ci": "pnpm -r lint:ci",
+        "lint:fix": "pnpm -r lint:fix",
         "test:ci": "pnpm -r test:ci",
-        "lint:fix": "pnpm -r lint:fix"
+        "release": "pnpm -r release"
     },
     "engines": {
         "node": ">=16",
