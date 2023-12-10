@@ -12,6 +12,7 @@ and configurations into your projects.
   - [Stylelint Configurations](#stylelint-configurations)
     - [About StyleLint](#about-stylelint)
   - [TypeScript/JavaScript Configurations](#typescriptjavascript-configurations)
+  - [Contributing](#contributing)
 
 ## ESLint Configurations
 
@@ -54,3 +55,8 @@ reduce redundancy across projects. To utilize these configurations, head to
 the [`tsconfig`] directory and follow the setup instructions.
 
 [`tsconfig`]: ./packages/tsconfig/#readme
+
+## Contributing
+
+Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on
+how to contribute to this project.
