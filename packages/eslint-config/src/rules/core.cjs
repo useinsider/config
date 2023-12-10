@@ -14,6 +14,8 @@ module.exports = {
         'handle-callback-err': ['error'],
         'import/extensions': ['error', {
             js: 'never',
+            jsx: 'never',
+            json: 'always',
             ts: 'never',
             tsx: 'never',
             vue: 'always',

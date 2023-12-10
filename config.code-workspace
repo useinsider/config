@@ -1,0 +1,52 @@
+{
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "editorconfig.editorconfig",
+      "streetsidesoftware.code-spell-checker",
+      "eamodio.gitlens",
+      "github.vscode-pull-request-github",
+      "mhutchie.git-graph",
+      "vivaxy.vscode-conventional-commits"
+    ]
+  },
+  "folders": [
+    {
+      "name": "🌲 root",
+      "path": "."
+    },
+    {
+      "name": "eslint-config",
+      "path": "packages/eslint-config"
+    },
+    {
+      "name": "release-config",
+      "path": "packages/release-config"
+    },
+    {
+      "name": "stylelint",
+      "path": "packages/stylelint"
+    },
+    {
+      "name": "tsconfig",
+      "path": "packages/tsconfig"
+    }
+  ],
+  "settings": {
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "svg.preview.background": "transparent",
+    "npm.packageManager": "pnpm",
+    "stylelint.enable": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+  }
+}

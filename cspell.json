@@ -6,6 +6,7 @@
     "language": "en-US",
     "words": [
         "camelcase",
+        "commitlint",
         "linebreak",
         "plusplus",
         "rushstack",

@@ -1,0 +1,69 @@
+{
+    "name": "@useinsider/eslint-config",
+    "version": "1.0.1-beta.8",
+    "keywords": ["useinsider", "eslint", "eslint-config"],
+    "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
+    "license": "MIT",
+    "packageManager": "pnpm@8.11.0",
+    "scripts": {
+        "lint": "eslint --ext .js,.cjs ./",
+        "lint:ci": "pnpm lint --quiet",
+        "lint:fix": "pnpm lint --fix",
+        "release": "semantic-release -e semantic-release-monorepo"
+    },
+    "homepage": "https://github.com/useinsider/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/useinsider/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/useinsider/eslint-config/issues"
+    },
+    "exports": {
+        ".": "./src/node/index.cjs",
+        "./node": "./src/node/index.cjs",
+        "./config": "./src/config/index.cjs",
+        "./dom": "./src/dom/index.cjs",
+        "./typescript": "./src/typescript/index.cjs",
+        "./typescript-dom": "./src/typescript-dom/index.cjs",
+        "./vue3": "./src/vue3/index.cjs",
+        "./vue3-typescript": "./src/vue3-typescript/index.cjs"
+    },
+    "files": [
+        "src/**/*"
+    ],
+    "engines": {
+        "node": "^16.0.0 || >=18.0.0"
+    },
+    "dependencies": {
+        "@cspell/eslint-plugin": "6.19.2",
+        "@stylistic/eslint-plugin": "1.4.1",
+        "@stylistic/eslint-plugin-migrate": "1.4.1",
+        "eslint-config-airbnb-base": "15.0.0",
+        "eslint-plugin-import": "2.29.0",
+        "eslint-plugin-jsdoc": "46.9.0"
+    },
+    "devDependencies": {
+        "@semantic-release/changelog": "6.0.3",
+        "@semantic-release/git": "10.0.1",
+        "@types/eslint": "8.44.8",
+        "@types/node": "20.10.2",
+        "@useinsider/release-config": "workspace:*",
+        "semantic-release": "19.0.5",
+        "semantic-release-monorepo": "7.0.5"
+    },
+    "optionalDependencies": {
+        "@rushstack/eslint-patch": ">=1.6.0",
+        "@stylistic/eslint-plugin": ">=1.4.1",
+        "@stylistic/eslint-plugin-migrate": ">=1.4.1",
+        "@typescript-eslint/eslint-plugin": ">=6.13.1",
+        "@vue/eslint-config-typescript": ">=12.0.0",
+        "eslint": ">=8.54.0",
+        "eslint-plugin-vue": ">=9.19.2",
+        "eslint-plugin-vue-scoped-css": ">=2.5.1",
+        "vue-eslint-parser": ">=9.3.2"
+    },
+    "publishConfig": {
+        "access": "restricted"
+    }
+}
