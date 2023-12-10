@@ -1,7 +1,11 @@
 {
     "name": "@useinsider/eslint-config",
-    "version": "1.0.1-beta.8",
-    "keywords": ["useinsider", "eslint", "eslint-config"],
+    "version": "1.0.0-alpha.1",
+    "keywords": [
+        "useinsider",
+        "eslint",
+        "eslint-config"
+    ],
     "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
     "license": "MIT",
     "packageManager": "pnpm@8.11.0",
