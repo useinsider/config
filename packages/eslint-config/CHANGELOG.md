@@ -1,3 +1,10 @@
+# [@useinsider/eslint-config-v1.0.0-beta.2](https://github.com/useinsider/eslint-config/compare/@useinsider/eslint-config@1.0.0-beta.1...@useinsider/eslint-config@1.0.0-beta.2) (2023-12-10)
+
+
+### Bug Fixes
+
+* **eslint-config:** update ESLint rules for file extensions and indentation ([fe17f8d](https://github.com/useinsider/eslint-config/commit/fe17f8d2b405eb4f430dd0aea5fb5a2147f7d936))
+
 # @useinsider/eslint-config-v1.0.0-beta.1 (2023-12-10)
 
 
