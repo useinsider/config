@@ -1,6 +1,7 @@
 {
     "name": "@useinsider/release-config",
     "version": "0.0.1",
+    "private": true,
     "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
     "license": "MIT",
     "packageManager": "pnpm@8.11.0",
