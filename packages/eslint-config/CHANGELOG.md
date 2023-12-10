@@ -1,3 +1,5 @@
+# [@useinsider/eslint-config-v1.1.1](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.0...@useinsider/eslint-config@1.1.1) (2023-12-10)
+
 # [@useinsider/eslint-config-v1.1.0](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.0.0...@useinsider/eslint-config@1.1.0) (2023-12-10)
 
 

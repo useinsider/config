@@ -1,6 +1,6 @@
 {
     "name": "@useinsider/eslint-config",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "A collection of ESLint configurations provided by @useinsider, offering support for various environments including Vanilla JS, TypeScript, and framework-specific setups such as Vue 3.",
     "keywords": [
         "useinsider",
@@ -25,9 +25,9 @@
     },
     "homepage": "https://github.com/useinsider/config/tree/master/packages/eslint-config#readme",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/useinsider/config",
-      "directory": "packages/eslint-config"
+        "type": "git",
+        "url": "https://github.com/useinsider/config",
+        "directory": "packages/eslint-config"
     },
     "bugs": {
         "url": "https://github.com/useinsider/config/issues"
