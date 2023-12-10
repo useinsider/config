@@ -29,13 +29,9 @@ jobs:
   lint-primary:
     needs: variables
     uses: ./.github/workflows/base-eslint-checker.yml
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [20]
     with:
       fixErrors: ${{ needs.variables.outputs.isPrimalBranch == 'false' }}
-      nodeVersion: ${{ matrix.node-version }}
+      nodeVersion: 20
   lint-rest:
     needs: [variables, lint-primary]
     if: ${{github.event_name == 'push' && needs.variables.outputs.isPrimalBranch == 'false'}}
