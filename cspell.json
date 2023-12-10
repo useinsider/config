@@ -6,8 +6,13 @@
     "language": "en-US",
     "words": [
         "camelcase",
+        "commitlint",
+        "commitlintrc",
         "linebreak",
-        "plusplus"
+        "plusplus",
+        "rushstack",
+        "stylelint",
+        "useinsider"
     ],
     "ignoreWords": []
 }

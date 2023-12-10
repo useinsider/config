@@ -1,0 +1,59 @@
+{
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "editorconfig.editorconfig",
+      "streetsidesoftware.code-spell-checker",
+      "eamodio.gitlens",
+      "github.vscode-pull-request-github",
+      "mhutchie.git-graph",
+      "vivaxy.vscode-conventional-commits"
+    ]
+  },
+  "folders": [
+    {
+      "name": "🌲 root",
+      "path": "."
+    },
+    {
+      "name": "eslint-config",
+      "path": "packages/eslint-config"
+    },
+    {
+      "name": "release-config",
+      "path": "packages/release-config"
+    },
+    {
+      "name": "stylelint-config",
+      "path": "packages/stylelint-config"
+    },
+    {
+      "name": "tsconfig",
+      "path": "packages/tsconfig"
+    }
+  ],
+  "settings": {
+    "[html]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "conventionalCommits.scopes": [
+      "root",
+      "eslint-config",
+      "release-config",
+      "stylelint-config",
+      "tsconfig"
+    ],
+    "css.validate": false,
+    "less.validate": false,
+    "npm.packageManager": "pnpm",
+    "scss.validate": false,
+    "stylelint.enable": true,
+    "svg.preview.background": "transparent"
+  }
+}

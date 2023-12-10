@@ -24,6 +24,10 @@ module.exports = {
         '@stylistic/implicit-arrow-linebreak': ['error', 'beside'],
         '@stylistic/indent': ['error', 4, {
             SwitchCase: 1,
+            ignoredNodes: [
+                'PropertyDefinition[decorators]',
+                'TSUnionType',
+            ],
         }],
         '@stylistic/key-spacing': ['error'],
         '@stylistic/keyword-spacing': ['error'],
@@ -53,6 +57,7 @@ module.exports = {
         '@stylistic/multiline-ternary': ['error', 'always-multiline'],
         '@stylistic/new-parens': ['error', 'always'],
         '@stylistic/no-extra-parens': ['error', 'all', {
+            allowParensAfterCommentPattern: '@type',
             enforceForArrowConditionals: false,
             nestedBinaryExpressions: false,
             returnAssign: false,

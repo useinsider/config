@@ -12,13 +12,11 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         "outDir": "dist",
-        "moduleResolution": "node",
     },
     "include": [
-        "./*.ts",
-        "./*.js",
-        "./*.cjs",
-        "./*.d.ts",
-        "./.commitlintrc.js"
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.cjs",
+        "src/**/*.d.ts",
     ],
 }

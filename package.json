@@ -1,48 +1,35 @@
 {
-    "name": "@useinsider/eslint-config",
-    "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
+    "name": "@useinsider/config",
+    "private": true,
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "0.0.1",
+    "repository": "github:useinsider/config",
     "packageManager": "pnpm@8.11.0",
     "scripts": {
-        "lint": "eslint --ext .js,.cjs ./",
-        "lint:fix": "pnpm lint --fix"
+        "prepare": "husky install",
+        "dev": "pnpm -r --parallel dev",
+        "build": "pnpm -r --stream build",
+        "lint": "pnpm lint:root && pnpm -r --stream lint",
+        "lint:ci": "pnpm lint:root --quiet && pnpm -r lint:ci",
+        "lint:fix": "pnpm lint:root --fix && pnpm -r lint:fix",
+        "lint:root": "eslint ./",
+        "test:ci": "pnpm -r test:ci",
+        "release": "pnpm -r release"
     },
-    "homepage": "https://github.com/useinsider/eslint-config#readme",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/useinsider/eslint-config.git"
+    "engines": {
+        "node": ">=16",
+        "pnpm": ">=8"
     },
-    "bugs": {
-        "url": "https://github.com/useinsider/eslint-config/issues"
-    },
-    "exports": {
-        ".": "./src/node.cjs",
-        "./dom": "./src/dom.cjs",
-        "./typescript": "./src/typescript.cjs",
-        "./typescript-dom": "./src/typescript-dom.cjs",
-        "./vue3": "./src/vue3.cjs",
-        "./node": "./src/node.cjs",
-        "./config": "./src/config.cjs"
-    },
-    "files": [
-        "src/**/*"
-    ],
     "devDependencies": {
-        "@cspell/eslint-plugin": "8.0.0",
-        "@semantic-release/changelog": "6.0.3",
-        "@semantic-release/git": "10.0.1",
-        "@stylistic/eslint-plugin": "1.4.1",
-        "@stylistic/eslint-plugin-migrate": "1.4.1",
-        "@types/eslint": "8.44.8",
-        "@types/node": "20.10.1",
-        "eslint": "8.54.0",
+        "@commitlint/cli": "17.8.1",
+        "@commitlint/config-conventional": "17.8.1",
+        "@commitlint/types": "17.8.1",
+        "@cspell/eslint-plugin": "6.19.2",
+        "@types/node": "20.10.2",
+        "@typescript-eslint/eslint-plugin": ">=6.13.1",
         "eslint-config-airbnb-base": "15.0.0",
-        "eslint-plugin-import": "2.29.0",
+        "eslint-config-airbnb-typescript": "17.1.0",
         "eslint-plugin-jsdoc": "46.9.0",
-        "semantic-release": "22.0.8"
-    },
-    "publishConfig": {
-        "access": "restricted"
+        "husky": "8.0.3"
     }
 }
