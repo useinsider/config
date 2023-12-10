@@ -28,6 +28,8 @@ module.exports = {
         'jsdoc/require-param': 'off',
         'jsdoc/require-jsdoc': 'off',
         'jsdoc/require-returns': 'off',
+        'jsdoc/require-param-type': 'off',
+        'jsdoc/check-param-names': 'off',
     },
     settings: {
         jsdoc: {

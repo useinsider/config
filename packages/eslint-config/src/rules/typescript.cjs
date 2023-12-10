@@ -24,13 +24,7 @@ module.exports = {
         'no-useless-constructor': 'off',
         '@typescript-eslint/no-useless-constructor': 'error',
         '@typescript-eslint/array-type': ['error', { default: 'array', readonly: 'array' }],
-        '@typescript-eslint/indent': ['error', 4, {
-            SwitchCase: 1,
-            ignoredNodes: [
-                'PropertyDefinition[decorators]',
-                'TSUnionType',
-            ],
-        }],
+        '@typescript-eslint/indent': 'off',
         semi: 'off',
         '@typescript-eslint/semi': ['error', 'always'],
         '@typescript-eslint/no-misused-promises': ['error', {
@@ -42,9 +36,5 @@ module.exports = {
         '@typescript-eslint/lines-between-class-members': ['error', 'always', {
             exceptAfterSingleLine: true,
         }],
-
-        // TODO enable after SD-80950
-        '@typescript-eslint/no-empty-function': 'off',
-        '@typescript-eslint/no-explicit-any': 'off',
     },
 };

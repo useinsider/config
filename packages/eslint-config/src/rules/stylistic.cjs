@@ -24,6 +24,10 @@ module.exports = {
         '@stylistic/implicit-arrow-linebreak': ['error', 'beside'],
         '@stylistic/indent': ['error', 4, {
             SwitchCase: 1,
+            ignoredNodes: [
+                'PropertyDefinition[decorators]',
+                'TSUnionType',
+            ],
         }],
         '@stylistic/key-spacing': ['error'],
         '@stylistic/keyword-spacing': ['error'],
