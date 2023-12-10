@@ -1,3 +1,10 @@
+# [@useinsider/eslint-config-v1.1.4](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.3...@useinsider/eslint-config@1.1.4) (2023-12-10)
+
+
+### Bug Fixes
+
+* fix npmrc and remove unnecessary publishConfig ([330db41](https://github.com/useinsider/config/commit/330db41b73502d555cf8b59b6488e9ee70f9f1ce))
+
 # [@useinsider/eslint-config-v1.1.3](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.2...@useinsider/eslint-config@1.1.3) (2023-12-10)
 
 
