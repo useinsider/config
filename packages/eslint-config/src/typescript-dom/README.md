@@ -62,3 +62,24 @@ module.exports = {
   ],
 };
 ```
+
+### Vue Extension Configuration
+
+To properly lint `.vue` files imported within `.ts` files, it's essential to
+update the `parserOptions` in your ESLint configuration. This adjustment helps
+prevent ESLint errors that may arise due to the import of Vue components. Add
+the following configuration to your `.eslintrc` file:
+
+```js
+{
+  // Existing configuration...
+  parserOptions: {
+    // Other existing parser options...
+    extraFileExtensions: ['.vue'], // Add this line
+  },
+},
+```
+
+This change ensures that ESLint correctly processes .vue files alongside
+TypeScript files, maintaining consistent code quality and style across your
+project.
