@@ -21,7 +21,7 @@
 ## Reporting an Issue
 
 If you have any trouble with a rule set, dependency or a test, feel free to
-report it in [issues](https://github.com/useinsider/eslint-config/issues).
+report it in [issues](https://github.com/useinsider/config/issues).
 
 ## Development
 
