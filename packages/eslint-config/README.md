@@ -1,10 +1,5 @@
 # ESLint Config
 
-Welcome to Insider's shared ESLint configuration! This project offers a set of
-ESLint rules tailored for both EcmaScript/JavaScript and TypeScript. It is
-designed to help you seamlessly integrate Insider's coding style into your
-development workflow.
-
 ## Table of Contents
 - [ESLint Config](#eslint-config)
   - [Table of Contents](#table-of-contents)
