@@ -24,8 +24,8 @@
       "path": "packages/release-config"
     },
     {
-      "name": "stylelint",
-      "path": "packages/stylelint"
+      "name": "stylelint-config",
+      "path": "packages/stylelint-config"
     },
     {
       "name": "tsconfig",
@@ -46,7 +46,7 @@
       "root",
       "eslint-config",
       "release-config",
-      "stylelint",
+      "stylelint-config",
       "tsconfig"
     ],
     "css.validate": false,
