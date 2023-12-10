@@ -1,3 +1,10 @@
+# [@useinsider/eslint-config-v1.1.2](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.1...@useinsider/eslint-config@1.1.2) (2023-12-10)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove "publishConfig" from package.json ([a18f890](https://github.com/useinsider/config/commit/a18f890a12f4d522e9c0360a6217506726b97acb))
+
 # [@useinsider/eslint-config-v1.1.1](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.0...@useinsider/eslint-config@1.1.1) (2023-12-10)
 
 # [@useinsider/eslint-config-v1.1.0](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.0.0...@useinsider/eslint-config@1.1.0) (2023-12-10)
