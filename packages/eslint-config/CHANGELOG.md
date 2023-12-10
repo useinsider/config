@@ -1,3 +1,10 @@
+# [@useinsider/eslint-config-v1.1.3](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.2...@useinsider/eslint-config@1.1.3) (2023-12-10)
+
+
+### Bug Fixes
+
+* **eslint-config:** add "publishConfig" from package.json ([67d8121](https://github.com/useinsider/config/commit/67d8121ac5c3f07f03904dd95dd95590fe66aaf7))
+
 # [@useinsider/eslint-config-v1.1.2](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.1...@useinsider/eslint-config@1.1.2) (2023-12-10)
 
 
