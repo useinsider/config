@@ -1,7 +1,7 @@
-# ESLint Config
+# ESLint Configurations
 
 ## Table of Contents
-- [ESLint Config](#eslint-config)
+- [ESLint Configurations](#eslint-configurations)
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
     - [Installation](#installation)
@@ -21,13 +21,13 @@ using the `-D` and `-E` flags in your package manager commands.
 ### Installation
 
 1. **Install as a Development Dependency:**
-   - For npm users:
-     ```bash
-     npm install -D -E @useinsider/eslint-config
-     ```
    - For pnpm users:
      ```bash
      pnpm add -D -E @useinsider/eslint-config
+     ```
+   - For npm users:
+     ```bash
+     npm install -D -E @useinsider/eslint-config
      ```
 2. **Create an ESLint config file:**
    You'll need an ESLint config file in your projects root directory.
