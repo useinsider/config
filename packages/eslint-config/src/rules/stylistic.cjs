@@ -53,6 +53,7 @@ module.exports = {
         '@stylistic/multiline-ternary': ['error', 'always-multiline'],
         '@stylistic/new-parens': ['error', 'always'],
         '@stylistic/no-extra-parens': ['error', 'all', {
+            allowParensAfterCommentPattern: '@type',
             enforceForArrowConditionals: false,
             nestedBinaryExpressions: false,
             returnAssign: false,

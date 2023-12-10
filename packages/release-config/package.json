@@ -1,0 +1,17 @@
+{
+    "name": "@useinsider/release-config",
+    "version": "0.0.1",
+    "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
+    "license": "MIT",
+    "packageManager": "pnpm@8.11.0",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint --ext .js,.cjs ./",
+        "lint:ci": "pnpm lint --quiet",
+        "lint:fix": "pnpm lint --fix"
+    },
+    "devDependencies": {
+        "@useinsider/eslint-config": "workspace:*",
+        "semantic-release": "19.0.5"
+    }
+}
