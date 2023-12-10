@@ -9,9 +9,10 @@
         "prepare": "husky install",
         "dev": "pnpm -r --parallel dev",
         "build": "pnpm -r --stream build",
-        "lint": "pnpm -r --stream lint",
-        "lint:ci": "pnpm -r lint:ci",
-        "lint:fix": "pnpm -r lint:fix",
+        "lint": "pnpm lint:root && pnpm -r --stream lint",
+        "lint:ci": "pnpm lint:root --quiet && pnpm -r lint:ci",
+        "lint:fix": "pnpm lint:root --fix && pnpm -r lint:fix",
+        "lint:root": "eslint ./",
         "test:ci": "pnpm -r test:ci",
         "release": "pnpm -r release"
     },
@@ -22,6 +23,13 @@
     "devDependencies": {
         "@commitlint/cli": "17.8.1",
         "@commitlint/config-conventional": "17.8.1",
+        "@commitlint/types": "17.8.1",
+        "@cspell/eslint-plugin": "6.19.2",
+        "@types/node": "20.10.2",
+        "@typescript-eslint/eslint-plugin": ">=6.13.1",
+        "eslint-config-airbnb-base": "15.0.0",
+        "eslint-config-airbnb-typescript": "17.1.0",
+        "eslint-plugin-jsdoc": "46.9.0",
         "husky": "8.0.3"
     }
 }
