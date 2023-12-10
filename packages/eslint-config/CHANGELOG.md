@@ -1,3 +1,11 @@
+# @useinsider/eslint-config-v1.0.0-beta.1 (2023-12-10)
+
+
+### Bug Fixes
+
+* changelog path ([3cc3b60](https://github.com/useinsider/eslint-config/commit/3cc3b600da918f0c5443c9451d7ff94df1c51280))
+* update file extensions in .eslintignore ([b7f10b1](https://github.com/useinsider/eslint-config/commit/b7f10b104ac09aa16c40fc9a1478b073b2da3b39))
+
 # [@useinsider/eslint-config-v1.0.0-alpha.2](https://github.com/useinsider/eslint-config/compare/@useinsider/eslint-config@1.0.0-alpha.1...@useinsider/eslint-config@1.0.0-alpha.2) (2023-12-10)
 
 
