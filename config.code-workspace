@@ -33,20 +33,27 @@
     }
   ],
   "settings": {
-    "css.validate": false,
-    "less.validate": false,
-    "scss.validate": false,
-    "svg.preview.background": "transparent",
-    "npm.packageManager": "pnpm",
-    "stylelint.enable": true,
+    "[html]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
     "[javascript]": {
       "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "[typescript]": {
       "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
-    "[html]": {
-      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
+    "conventionalCommits.scopes": [
+      "root",
+      "eslint-config",
+      "release-config",
+      "stylelint",
+      "tsconfig"
+    ],
+    "css.validate": false,
+    "less.validate": false,
+    "npm.packageManager": "pnpm",
+    "scss.validate": false,
+    "stylelint.enable": true,
+    "svg.preview.background": "transparent"
   }
 }
