@@ -1,3 +1,13 @@
+# @useinsider/eslint-config-v1.0.0 (2023-12-10)
+
+
+### Bug Fixes
+
+* changelog path ([3cc3b60](https://github.com/useinsider/config/commit/3cc3b600da918f0c5443c9451d7ff94df1c51280))
+* **eslint-config:** remove bypassed rules ([df29311](https://github.com/useinsider/config/commit/df29311a86feff7691313e8d53d2ab1616a83ee6))
+* **eslint-config:** update ESLint rules for file extensions and indentation ([fe17f8d](https://github.com/useinsider/config/commit/fe17f8d2b405eb4f430dd0aea5fb5a2147f7d936))
+* update file extensions in .eslintignore ([b7f10b1](https://github.com/useinsider/config/commit/b7f10b104ac09aa16c40fc9a1478b073b2da3b39))
+
 # [@useinsider/eslint-config-v1.0.0-beta.3](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.0.0-beta.2...@useinsider/eslint-config@1.0.0-beta.3) (2023-12-10)
 
 
