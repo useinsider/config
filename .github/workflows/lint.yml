@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  setVariables:
+  variables:
     runs-on: self-hosted
     outputs:
       isPrimalBranch: ${{ steps.set-variables.outputs.isPrimalBranch }}
@@ -27,23 +27,19 @@ jobs:
             || github.ref == 'refs/heads/alpha'
           }}" >> $GITHUB_OUTPUT
   lint-primary:
-    needs: setVariables
+    needs: variables
     uses: ./.github/workflows/base-eslint-checker.yml
-    strategy:
-      matrix:
-        node-version: [20]
     with:
-      isPrimalBranch: ${{ needs.setVariables.outputs.isPrimalBranch == 'true' }}
-      isPrimaryVersion: true
-      nodeVersion: ${{ matrix.node-version }}
+      fixErrors: ${{ needs.variables.outputs.isPrimalBranch == 'false' }}
+      nodeVersion: 20
   lint-rest:
-    needs: [setVariables, lint-primary]
-    if: ${{github.event_name == 'push' && needs.setVariables.outputs.isPrimalBranch == 'false'}}
+    needs: [variables, lint-primary]
+    if: ${{github.event_name == 'push' && needs.variables.outputs.isPrimalBranch == 'false'}}
     uses: ./.github/workflows/base-eslint-checker.yml
     strategy:
+      fail-fast: false
       matrix:
         node-version: [16, 18, 'latest']
     with:
-      isPrimalBranch: false
-      isPrimaryVersion: false
+      fixErrors: false
       nodeVersion: ${{ matrix.node-version }}

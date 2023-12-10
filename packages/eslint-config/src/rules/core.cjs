@@ -14,6 +14,8 @@ module.exports = {
         'handle-callback-err': ['error'],
         'import/extensions': ['error', {
             js: 'never',
+            json: 'always',
+            jsx: 'never',
             ts: 'never',
             tsx: 'never',
             vue: 'always',
@@ -120,18 +122,18 @@ module.exports = {
             },
             {
                 blankLine: 'always',
-                prev: ['*'],
                 next: ['multiline-block-like'],
+                prev: ['*'],
             },
             {
                 blankLine: 'always',
-                prev: ['multiline-block-like'],
                 next: ['*'],
+                prev: ['multiline-block-like'],
             },
             {
                 blankLine: 'any',
-                prev: ['case'],
                 next: ['case'],
+                prev: ['case'],
             },
             {
                 blankLine: 'any',
@@ -144,6 +146,7 @@ module.exports = {
         }],
         'prefer-destructuring': ['error'],
         radix: ['error', 'as-needed'],
+        semi: 'off',
         'space-before-function-paren': 'off',
         strict: ['error'],
         'use-isnan': ['error'],
