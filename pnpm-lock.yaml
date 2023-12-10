@@ -106,9 +106,6 @@ importers:
 
   packages/release-config:
     devDependencies:
-      '@useinsider/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
       semantic-release:
         specifier: 19.0.5
         version: 19.0.5
