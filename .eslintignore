@@ -1,2 +1,2 @@
-!.eslintrc.*[jt]s
-!.releaserc.*[jt]s
+!.eslintrc.*js
+!.releaserc.*js
