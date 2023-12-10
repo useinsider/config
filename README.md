@@ -2,7 +2,7 @@
 
 Welcome to Insider's shared configuration library! This monorepo offers a
 comprehensive set of configurations for EcmaScript/JavaScript and TypeScript
-projects. Our aim is to facilitate the integration of Insider's coding styles
+projects. We aim to facilitate the integration of Insider's coding styles
 and configurations into your projects.
 
 ## Table of Contents
