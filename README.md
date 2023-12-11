@@ -24,15 +24,15 @@ explore the [`eslint-config`] directory and follow the instructions.
 
 ## Stylelint Configurations
 
+Similarly, our Stylelint configurations provide tailored rule sets for
+different project types. Visit the [`stylelint-config`] directory to learn how
+to apply these configurations.
+
 <blockquote>
   <p>[!NOTE]<br>
     Stylelint configurations are currently in development and not yet available.
   </p>
 </blockquote>
-
-Similarly, our Stylelint configurations provide tailored rule sets for
-different project types. Visit the [`stylelint-config`] directory to learn how
-to apply these configurations.
 
 [`stylelint-config`]: ./packages/stylelint-config/#readme
 
@@ -42,17 +42,17 @@ similar in function to ESLint but focused on stylesheets.
 
 ## TypeScript/JavaScript Configurations
 
+For TypeScript and JavaScript, we provide `tsconfig` and `jsconfig` files,
+respectively. These configuration files standardize project structures and
+reduce redundancy across projects. To utilize these configurations, head to
+the [`tsconfig`] directory and follow the setup instructions.
+
 <blockquote>
   <p>[!NOTE]<br>
     TypeScript/JavaScript configurations are currently in development and not
     yet available
   </p>
 </blockquote>
-
-For TypeScript and JavaScript, we provide `tsconfig` and `jsconfig` files,
-respectively. These configuration files standardize project structures and
-reduce redundancy across projects. To utilize these configurations, head to
-the [`tsconfig`] directory and follow the setup instructions.
 
 [`tsconfig`]: ./packages/tsconfig/#readme
 
