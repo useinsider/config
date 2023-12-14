@@ -8,6 +8,7 @@ module.exports = {
         'plugin:jsdoc/recommended',
         'plugin:@cspell/recommended',
         require.resolve('../rules/core.cjs'),
+        require.resolve('../rules/cspell.cjs'),
         require.resolve('../rules/stylistic.cjs'),
         require.resolve('../rules/jsdoc.cjs'),
         require.resolve('../rules/vue.cjs'),
