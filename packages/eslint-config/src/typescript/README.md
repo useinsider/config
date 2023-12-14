@@ -34,9 +34,9 @@ eslint-plugin-jsdoc \
 npm install -E -D \
 eslint-config-airbnb-base \
 eslint-config-airbnb-typescript \
-@cspell/eslint-plugin \
-eslint-plugin-jsdoc \
 @typescript-eslint/eslint-plugin
+eslint-plugin-jsdoc \
+@cspell/eslint-plugin \
 ```
 
 ## Usage
