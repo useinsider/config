@@ -10,6 +10,7 @@ module.exports = {
         'consistent-return': ['error'],
         curly: ['error', 'all'],
         'dot-notation': ['error'],
+        'function-paren-newline': 'off',
         'guard-for-in': 'error',
         'handle-callback-err': ['error'],
         'import/extensions': ['error', {
@@ -66,6 +67,7 @@ module.exports = {
             number: true,
             string: true,
         }],
+        'implicit-arrow-linebreak': 'off',
         'no-invalid-regexp': ['error'],
         'no-iterator': ['error'],
         'no-mixed-operators': 'off',
