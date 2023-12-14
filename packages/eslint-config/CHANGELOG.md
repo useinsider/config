@@ -1,3 +1,11 @@
+# [@useinsider/eslint-config-v1.1.5](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.4...@useinsider/eslint-config@1.1.5) (2023-12-14)
+
+
+### Bug Fixes
+
+* **eslint-config:** add cspell rules to ESLint configurations ([a88fcaa](https://github.com/useinsider/config/commit/a88fcaa3f089513174a0fd86cfad1754efc3a1c3))
+* **eslint-config:** disable deprecated `function-paren-newline` and `implicit-arrow-linebreak` rules ([811e6af](https://github.com/useinsider/config/commit/811e6af927b01b6efa9543521807a39f873bf7f3))
+
 # [@useinsider/eslint-config-v1.1.4](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.3...@useinsider/eslint-config@1.1.4) (2023-12-10)
 
 
