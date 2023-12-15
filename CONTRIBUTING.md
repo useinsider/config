@@ -15,6 +15,7 @@
       - [Hotfix Branches](#hotfix-branches)
       - [Refactor Branches](#refactor-branches)
       - [Documentation Branches](#documentation-branches)
+      - [Chore Branches](#chore-branches)
     - [Commit Naming](#commit-naming)
     - [Pull Request](#pull-request)
 
@@ -81,6 +82,11 @@ Example: `refactor/optimize-code-performance`.
 
 For documentation updates, prefixed with `docs/`.<br>
 Example: `docs/improve-readme`.
+
+#### Chore Branches
+
+For other changes that don't modify source or test files, prefixed with `chore/`.<br>
+Example: `chore/update-codeowners`.
 
 ### Commit Naming
 
