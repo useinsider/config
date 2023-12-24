@@ -25,10 +25,10 @@ extends. These are necessary for the configuration to work correctly:
 pnpm add -E -D \
 eslint-config-airbnb-base \
 eslint-config-airbnb-typescript \
-eslint-plugin-vue \
-eslint-plugin-vue-scoped-css \
 eslint-plugin-jsdoc \
 @cspell/eslint-plugin \
+eslint-plugin-vue \
+eslint-plugin-vue-scoped-css \
 @vue/eslint-config-typescript \
 @typescript-eslint/eslint-plugin \
 vue-eslint-parser
@@ -38,10 +38,10 @@ vue-eslint-parser
 npm install -E -D \
 eslint-config-airbnb-base \
 eslint-config-airbnb-typescript \
-eslint-plugin-vue \
-eslint-plugin-vue-scoped-css \
 eslint-plugin-jsdoc \
 @cspell/eslint-plugin \
+eslint-plugin-vue \
+eslint-plugin-vue-scoped-css \
 @vue/eslint-config-typescript \
 @typescript-eslint/eslint-plugin \
 vue-eslint-parser
@@ -60,7 +60,7 @@ module.exports = {
     {
       files: ['./src/**/*.vue'],
       extends: [
-        '@useinsider/eslint-config/vue3',
+        '@useinsider/eslint-config/vue3-typescript',
       ],
       parserOptions: {
         project: ['./tsconfig.json'],
