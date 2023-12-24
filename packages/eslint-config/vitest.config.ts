@@ -5,7 +5,6 @@ export default defineConfig({
     plugins: [tsconfigPaths()],
     test: {
         root: './tests',
-        watch: true,
         coverage: {
             provider: 'v8',
             reporter: ['text', 'json', 'html'],
