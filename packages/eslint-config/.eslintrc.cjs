@@ -1,6 +1,7 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
     root: true,
+    ignorePatterns: ['tests/config/**/case.*'],
     overrides: [
         {
             files: ['./src/**/*.{cjs,js}'],
