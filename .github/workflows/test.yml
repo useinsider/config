@@ -1,0 +1,28 @@
+name: Test Projects
+
+on:
+  workflow_call:
+    inputs:
+      isPrimalBranch:
+        required: true
+        type: boolean
+
+concurrency:
+  group: test-projects-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-primary:
+    uses: ./.github/workflows/base-test.yml
+    with:
+      nodeVersion: 20
+  test-rest:
+    needs: [test-primary]
+    if: ${{github.event_name == 'push' && !inputs.isPrimalBranch}}
+    uses: ./.github/workflows/base-test.yml
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16, 18, 'latest']
+    with:
+      nodeVersion: ${{ matrix.node-version }}
