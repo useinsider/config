@@ -13,7 +13,7 @@ module.exports = {
             ],
         },
         {
-            files: ['./*.ts', './scripts/**/*.ts'],
+            files: ['./*.ts'],
             extends: [
                 require.resolve(`${eslintConfigRootPath}/node/index.cjs`),
                 require.resolve(`${eslintConfigRootPath}/typescript/index.cjs`),
