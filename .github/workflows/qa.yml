@@ -1,0 +1,38 @@
+name: Quality Assurance
+
+on:
+  workflow_call:
+  push:
+    branches-ignore:
+      - main
+      - beta
+      - alpha
+
+concurrency:
+  group: lint-files-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  variables:
+    runs-on: self-hosted
+    outputs:
+      isPrimalBranch: ${{ steps.set-variables.outputs.isPrimalBranch }}
+    steps:
+      - name: Set variables
+        id: set-variables
+        run: |
+          echo "isPrimalBranch=${{
+            github.ref == 'refs/heads/main'
+            || github.ref == 'refs/heads/beta'
+            || github.ref == 'refs/heads/alpha'
+          }}" >> $GITHUB_OUTPUT
+  lint:
+    needs: variables
+    uses: ./.github/workflows/lint.yml
+    with:
+      isPrimalBranch: ${{ needs.variables.outputs.isPrimalBranch == 'true' }}
+  test:
+    needs: variables
+    uses: ./.github/workflows/test.yml
+    with:
+      isPrimalBranch: ${{ needs.variables.outputs.isPrimalBranch == 'true' }}
