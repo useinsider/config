@@ -1,23 +1,11 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "checkJs": true,
-        "target": "ES2020",
-        "module": "ESNext",
-        "lib": [
-            "ES2020",
-        ],
-        "skipLibCheck": true,
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true,
-        "outDir": "dist",
-    },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.js",
-        "src/**/*.cjs",
-        "src/**/*.d.ts",
-    ],
+    "files": [],
+    "references": [
+        {
+            "path": "./tsconfig.test.json"
+        },
+        {
+            "path": "./tsconfig.app.json"
+        },
+    ]
 }
