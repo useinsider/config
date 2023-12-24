@@ -15,12 +15,11 @@ permissions:
   contents: read
 
 jobs:
-  lint:
-    name: Lint
-    uses: ./.github/workflows/lint.yml
+  quality-assurance:
+    uses: ./.github/workflows/qa.yml
   release:
     name: Release
-    needs: lint
+    needs: quality-assurance
     runs-on: self-runner-node16
     permissions:
       contents: write
