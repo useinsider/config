@@ -13,6 +13,7 @@
         "lint:ci": "pnpm lint:root --quiet && pnpm -r lint:ci",
         "lint:fix": "pnpm lint:root --fix && pnpm -r lint:fix",
         "lint:root": "eslint ./",
+        "test": "pnpm -r test",
         "test:ci": "pnpm -r test:ci",
         "release": "pnpm -r release"
     },
