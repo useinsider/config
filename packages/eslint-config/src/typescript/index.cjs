@@ -11,9 +11,9 @@ module.exports = {
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         require.resolve('../rules/core.cjs'),
         require.resolve('../rules/cspell.cjs'),
-        require.resolve('../rules/stylistic.cjs'),
         require.resolve('../rules/jsdoc.cjs'),
         require.resolve('../rules/typescript.cjs'),
+        require.resolve('../rules/stylistic.cjs'),
     ],
     env: {
         node: true,

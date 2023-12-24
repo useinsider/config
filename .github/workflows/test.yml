@@ -1,4 +1,4 @@
-name: Lint Projects
+name: Test Projects
 
 on:
   workflow_call:
@@ -8,23 +8,21 @@ on:
         type: boolean
 
 concurrency:
-  group: lint-projects-${{ github.event.pull_request.number || github.ref }}
+  group: test-projects-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
-  lint-primary:
-    uses: ./.github/workflows/base-lint.yml
+  test-primary:
+    uses: ./.github/workflows/base-test.yml
     with:
-      fixErrors: ${{ !inputs.isPrimalBranch }}
       nodeVersion: 20
-  lint-rest:
-    needs: [lint-primary]
+  test-rest:
+    needs: [test-primary]
     if: ${{github.event_name == 'push' && !inputs.isPrimalBranch}}
-    uses: ./.github/workflows/base-lint.yml
+    uses: ./.github/workflows/base-test.yml
     strategy:
       fail-fast: false
       matrix:
         node-version: [16, 18, 'latest']
     with:
-      fixErrors: false
       nodeVersion: ${{ matrix.node-version }}
