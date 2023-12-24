@@ -46,7 +46,7 @@
         "./tests/**/*.ts",
         "./tests/**/*.js",
         "./tests/**/*.cjs",
-        "./tests/**/*.d.ts", "tests/config/vue3-typescript/test/case.vue",
+        "./tests/**/*.d.ts",
     ],
     "exclude": [
         "./tests/**/case.*"
