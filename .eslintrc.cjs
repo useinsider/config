@@ -3,6 +3,7 @@ const eslintConfigRootPath = './packages/eslint-config/src';
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
     root: true,
+    ignorePatterns: ['packages/**/*'],
     overrides: [
         {
             files: ['./*.{cjs,js}'],
