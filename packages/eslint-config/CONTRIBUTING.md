@@ -1,5 +1,8 @@
 # Contributing to the Project
 
+See also the global [CONTRIBUTING.md](../../CONTRIBUTING.md) file for repo-wide
+specification.
+
 ## Table of Contents
 - [Contributing to the Project](#contributing-to-the-project)
   - [Table of Contents](#table-of-contents)
