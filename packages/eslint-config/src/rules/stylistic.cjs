@@ -13,6 +13,9 @@ module.exports = {
             functions: 'never',
             imports: 'always-multiline',
             objects: 'always-multiline',
+            enums: 'always-multiline',
+            generics: 'always-multiline',
+            tuples: 'always-multiline',
         }],
         '@stylistic/comma-spacing': ['error'],
         '@stylistic/computed-property-spacing': ['error'],
@@ -110,5 +113,6 @@ module.exports = {
         '@stylistic/template-curly-spacing': ['error', 'never'],
         '@stylistic/template-tag-spacing': ['error', 'never'],
         '@stylistic/type-annotation-spacing': ['error'],
+        '@stylistic/type-generic-spacing': ['error'],
     },
 };
