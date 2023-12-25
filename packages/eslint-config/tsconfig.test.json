@@ -1,0 +1,54 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "lib": [
+            "esnext"
+        ],
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "Bundler",
+        "skipLibCheck": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "outDir": "dist",
+        // "types": ["vitest"]
+        "baseUrl": ".",
+        "paths": {
+            "@useinsider/eslint-config": [
+                "./src/node/index.cjs"
+            ],
+            "@useinsider/eslint-config/dom": [
+                "./src/dom/index.cjs"
+            ],
+            "@useinsider/eslint-config/node": [
+                "./src/node/index.cjs"
+            ],
+            "@useinsider/eslint-config/typescript": [
+                "./src/typescript/index.cjs"
+            ],
+            "@useinsider/eslint-config/typescript-dom": [
+                "./src/typescript-dom/index.cjs"
+            ],
+            "@useinsider/eslint-config/vue3": [
+                "./src/vue3/index.cjs"
+            ],
+            "@useinsider/eslint-config/vue3-typescript": [
+                "./src/vue3-typescript/index.cjs"
+            ],
+        }
+    },
+    "include": [
+        "./src/**/*.cjs",
+        "./vitest.config.ts",
+        "./tests/**/*.ts",
+        "./tests/**/*.js",
+        "./tests/**/*.cjs",
+        "./tests/**/*.d.ts",
+    ],
+    "exclude": [
+        "./tests/**/case.*"
+    ]
+}

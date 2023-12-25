@@ -3,6 +3,7 @@ module.exports = {
     rules: {
         'vue/array-bracket-newline': ['error'],
         'vue/array-bracket-spacing': ['error', 'never'],
+        'vue/array-element-newline': ['error', 'consistent'],
         'vue/arrow-spacing': ['error'],
         'vue/attribute-hyphenation': ['error', 'always'],
         'vue/attributes-order': ['error', {
@@ -22,6 +23,9 @@ module.exports = {
             ],
         }],
         'vue/brace-style': ['error', '1tbs'],
+        'vue/camelcase': ['error', {
+            allow: ['^\\$_'],
+        }],
         'vue/comma-dangle': ['error', {
             arrays: 'always-multiline',
             exports: 'always-multiline',
@@ -76,8 +80,10 @@ module.exports = {
             ignoreUrls: true,
         }],
         'vue/multi-word-component-names': 'off',
+        'vue/multiline-ternary': ['error', 'always-multiline'],
         'vue/mustache-interpolation-spacing': ['error', 'always'],
         'vue/no-bare-strings-in-template': ['error'],
+        'vue/no-console': ['error'],
         'vue/no-constant-condition': ['error'],
         'vue/no-empty-component-block': ['error'],
         'vue/no-empty-pattern': ['error'],

@@ -1,3 +1,19 @@
+# [@useinsider/eslint-config-v1.2.0-beta.1](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.5...@useinsider/eslint-config@1.2.0-beta.1) (2023-12-24)
+
+
+### Bug Fixes
+
+* **eslint-config:** fix order of rules in TypeScript configuration ([423c43e](https://github.com/useinsider/config/commit/423c43eca301eba346d46e6411eefda91d95f9f6))
+* **eslint-config:** fix order of rules in typescript-dom configuration ([f7406aa](https://github.com/useinsider/config/commit/f7406aafc41c114411d41c0b3a9ebe8aa1341f03))
+
+
+### Features
+
+* **eslint-config:** add multiline options for enums, generics, and tuples in stylistic rules ([eacd0f7](https://github.com/useinsider/config/commit/eacd0f7cd7b3f6e7a370c92fb6079bb86958147c))
+* **eslint-config:** add new Vue 3 rules to eslint-config ([b26d7d9](https://github.com/useinsider/config/commit/b26d7d9a6c0130d6e7ec056fc4a7052bdb8ce52c))
+* **eslint-config:** turnoff deprecated rules and add new rule ([c4f95bf](https://github.com/useinsider/config/commit/c4f95bf77123045cdca0ddc715f99c9add763e1d))
+* **eslint-config:** turnoff deprecated rules and add new rule ([6404d2e](https://github.com/useinsider/config/commit/6404d2eacf7ea36afb2e55b007c1ac6ab7cb87b5))
+
 # [@useinsider/eslint-config-v1.1.5](https://github.com/useinsider/config/compare/@useinsider/eslint-config@1.1.4...@useinsider/eslint-config@1.1.5) (2023-12-14)
 
 

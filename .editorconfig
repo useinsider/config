@@ -8,5 +8,5 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 indent_size = 2
 
-[*.{js,ts,cjs,mjs,json,html,svg}]
+[*.{js,ts,cjs,mjs,json,html,vue,svg}]
 indent_size = 4
