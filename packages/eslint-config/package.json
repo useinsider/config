@@ -1,7 +1,7 @@
 {
     "name": "@useinsider/eslint-config",
     "type": "module",
-    "version": "1.2.0-beta.1",
+    "version": "1.2.0",
     "description": "A collection of ESLint configurations provided by @useinsider, offering support for various environments including Vanilla JS, TypeScript, and framework-specific setups such as Vue 3.",
     "keywords": [
         "useinsider",
