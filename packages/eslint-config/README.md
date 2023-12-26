@@ -10,6 +10,8 @@
     - [Vanilla 🍦](#vanilla-)
     - [Framework-specific](#framework-specific)
     - [⏳ Upcoming Configurations](#-upcoming-configurations)
+      - [Vanilla 🍦](#vanilla--1)
+      - [Framework-specific](#framework-specific-1)
   - [Contributing](#contributing)
 
 ## Getting Started
@@ -67,13 +69,19 @@ frameworks. Here's a list of available configurations:
 | :---------- | :---------------------------------------------------- | :-------------------------------------------------------------------------- |
 | **Vue 3**   | [`@useinsider/eslint-config/vue3`](./src/vue3#readme) | [`@useinsider/eslint-config/vue3-typescript`](./src/vue3-typescript#readme) |
 
+---
+
 ### ⏳ Upcoming Configurations
 
 Not available yet!
 
+#### Vanilla 🍦
+
 | Environment       | Browser (DOM)                                                     | Node                                                      |
 | :---------------- | :---------------------------------------------------------------- | :-------------------------------------------------------- |
 | **Legacy ES5 💀​** | [`@useinsider/eslint-config/legacy-dom`](./src/legacy-dom#readme) | [`@useinsider/eslint-config/legacy`](./src/legacy#readme) |
+
+#### Framework-specific
 
 | Environment | JavaScript                                            | TypeScript                                                                  |
 | :---------- | :---------------------------------------------------- | :-------------------------------------------------------------------------- |
