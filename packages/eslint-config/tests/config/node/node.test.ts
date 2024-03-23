@@ -2,20 +2,28 @@ import { describe } from 'vitest';
 import { testSingleFile } from '../../test-facility/testers';
 
 describe('node', async () => {
-    await testSingleFile(import.meta.url, 'case.js', [
+    await testSingleFile(import.meta.url, 'test/case.js', [
         { line: 1, column: 10, ruleId: '@stylistic/semi' },
         { line: 4, column: 1, ruleId: 'vars-on-top' },
         { line: 4, column: 1, ruleId: 'no-var' },
         { line: 4, column: 5, ruleId: 'prefer-destructuring' },
         { line: 4, column: 22, ruleId: '@stylistic/semi' },
         { line: 8, column: 1, ruleId: '@stylistic/indent' },
-        { line: 8, column: 14, ruleId: '@stylistic/space-before-function-paren' },
+        {
+            line: 8,
+            column: 14,
+            ruleId: '@stylistic/space-before-function-paren',
+        },
         { line: 9, column: 1, ruleId: '@stylistic/indent' },
         { line: 10, column: 1, ruleId: '@stylistic/indent' },
         { line: 11, column: 1, ruleId: '@stylistic/indent' },
         { line: 13, column: 1, ruleId: '@stylistic/indent' },
         { line: 14, column: 1, ruleId: '@stylistic/indent' },
-        { line: 14, column: 9, ruleId: '@stylistic/space-before-function-paren' },
+        {
+            line: 14,
+            column: 9,
+            ruleId: '@stylistic/space-before-function-paren',
+        },
         { line: 15, column: 1, ruleId: '@stylistic/indent' },
         { line: 16, column: 1, ruleId: '@stylistic/indent' },
         { line: 21, column: 1, ruleId: '@stylistic/indent' },
@@ -23,6 +31,7 @@ describe('node', async () => {
         { line: 23, column: 1, ruleId: '@stylistic/indent' },
         { line: 23, column: 28, ruleId: '@stylistic/comma-dangle' },
         { line: 28, column: 1, ruleId: '@stylistic/indent' },
+        { line: 38, column: 7, ruleId: 'prefer-destructuring' },
         { line: 39, column: 1, ruleId: 'padding-line-between-statements' },
         { line: 44, column: 1, ruleId: 'padding-line-between-statements' },
         { line: 48, column: 1, ruleId: '@stylistic/indent' },

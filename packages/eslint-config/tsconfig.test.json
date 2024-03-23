@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "composite": true,
         "allowJs": true,
         "checkJs": true,
         "lib": [
@@ -18,37 +19,25 @@
         "baseUrl": ".",
         "paths": {
             "@useinsider/eslint-config": [
-                "./src/node/index.cjs"
+                "src/main"
             ],
-            "@useinsider/eslint-config/dom": [
-                "./src/dom/index.cjs"
-            ],
-            "@useinsider/eslint-config/node": [
-                "./src/node/index.cjs"
-            ],
-            "@useinsider/eslint-config/typescript": [
-                "./src/typescript/index.cjs"
-            ],
-            "@useinsider/eslint-config/typescript-dom": [
-                "./src/typescript-dom/index.cjs"
-            ],
-            "@useinsider/eslint-config/vue3": [
-                "./src/vue3/index.cjs"
-            ],
-            "@useinsider/eslint-config/vue3-typescript": [
-                "./src/vue3-typescript/index.cjs"
-            ],
-        }
+        },
+        "typeRoots": [
+            "./node_modules/@types",
+            "./tests/@types"
+        ]
     },
     "include": [
-        "./src/**/*.cjs",
-        "./vitest.config.ts",
-        "./tests/**/*.ts",
-        "./tests/**/*.js",
-        "./tests/**/*.cjs",
-        "./tests/**/*.d.ts",
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.cjs",
+        "src/**/*.d.ts",
+        "tests/**/*.ts",
+        "tests/**/*.js",
+        "tests/**/*.cjs",
+        "tests/**/*.d.ts",
     ],
     "exclude": [
-        "./tests/**/case.*"
+        "./tests/**/test/**/*"
     ]
 }

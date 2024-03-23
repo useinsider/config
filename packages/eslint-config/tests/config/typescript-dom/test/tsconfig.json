@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
-        "target": "ES2020",
+        "target": "ES2022",
         "module": "ESNext",
         "lib": [
             "DOM",
+            "ES2022",
         ],
         "strict": true,
         "noUnusedLocals": true,
@@ -11,7 +12,12 @@
         "noFallthroughCasesInSwitch": true,
         "outDir": "dist",
         "baseUrl": ".",
-        "types": []
+        "types": [],
+        "paths": {
+            "@useinsider/eslint-config": [
+                "../../../dist/main"
+            ],
+        },
     },
     "include": [
         "./*.ts"

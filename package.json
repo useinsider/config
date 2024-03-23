@@ -9,8 +9,7 @@
         "prepare": "husky install",
         "dev": "pnpm -r --parallel dev",
         "build": "pnpm -r --stream build",
-        "lint": "pnpm lint:root && pnpm -r --stream lint",
-        "lint:ci": "pnpm lint:root --quiet && pnpm -r lint:ci",
+        "lint": "pnpm lint:root && pnpm -r --parallel lint",
         "lint:fix": "pnpm lint:root --fix && pnpm -r lint:fix",
         "lint:root": "eslint ./",
         "test": "pnpm -r test",
@@ -32,10 +31,5 @@
         "eslint-config-airbnb-typescript": "17.1.0",
         "eslint-plugin-jsdoc": "46.9.0",
         "husky": "8.0.3"
-    },
-    "pnpm": {
-        "overrides": {
-            "vite": "4.4.12"
-        }
     }
 }

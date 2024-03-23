@@ -8,9 +8,9 @@ specification.
   - [Table of Contents](#table-of-contents)
   - [Adding a New Rule](#adding-a-new-rule)
   - [Project Structure](#project-structure)
-    - [`src/**/index.cjs` files](#srcindexcjs-files)
-    - [`src/rules/*.cjs` files](#srcrulescjs-files)
-      - [`core.cjs`](#corecjs)
+    - [`src/configs/**` files](#srcconfigs-files)
+    - [`src/rules/**` files](#srcrules-files)
+      - [`core.ts`](#corets)
 
 ## Adding a New Rule
 
@@ -24,16 +24,16 @@ responsibility, we have to be picky about it.
 Public config file paths are in `exports` in
 [package.json](package.json#exports).
 
-### [`src/**/index.cjs`](./src/) files
+### [`src/configs/**`](./src/configs) files
 
 These are consumable (exported publicly) files that has sets of rules extending
 third-party libraries and [`rules`](./src/rules/).
 
-### [`src/rules/*.cjs`](./src/rules/) files
+### [`src/rules/**`](./src/rules/) files
 
 Files here contain rules serving the purpose indicated by their names.
 
-#### [`core.cjs`](./src/rules/core.cjs)
+#### [`core.ts`](./src/rules/core.ts)
 
 Contains ESLint-maintained core-level rules, free of external library
 dependencies.

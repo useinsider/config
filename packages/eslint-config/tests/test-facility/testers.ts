@@ -1,6 +1,7 @@
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { ESLint, type Linter } from 'eslint';
+import { Linter } from 'eslint';
+import { FlatESLint, type FlatESLintOptions, type LintMessage } from 'eslint/use-at-your-own-risk';
 import fs from 'fs-extra';
 import { expect, it, describe } from 'vitest';
 
@@ -10,7 +11,7 @@ interface Case {
     column: number;
 }
 
-function testMessages (messages: Linter.LintMessage[], cases: Case[], filePath?: string) {
+function testMessages (messages: LintMessage[], cases: Case[], filePath?: string) {
     messages.forEach((message, index) => {
         const expected = cases[index];
 
@@ -63,21 +64,26 @@ function testMessages (messages: Linter.LintMessage[], cases: Case[], filePath?:
 export async function testMultipleFiles (
     root: string,
     tests: { casePath: string; cases: Case[] }[],
-    props: { eslintConfig?: Linter.Config } = {}
+    props: { eslintConfig?: Linter.FlatConfig } = {}
 ) {
-    const eslintConfig: ESLint.Options = {
+    const eslintConfig: FlatESLintOptions = {
+        fix: false,
         ignore: false,
+        warnIgnored: true,
+        cache: false,
     };
 
     if (props.eslintConfig) {
-        eslintConfig.useEslintrc = false;
-        eslintConfig.baseConfig = props.eslintConfig;
+        eslintConfig.overrideConfig = props.eslintConfig;
+    } else {
+        eslintConfig.overrideConfigFile = fileURLToPath(new URL('test/eslint.config.js', root));
     }
 
-    const eslint = new ESLint(eslintConfig);
-    const results = await eslint.lintFiles(tests.map(({ casePath }) => fileURLToPath(new URL(casePath, root))));
+    const eslint = new FlatESLint(eslintConfig);
+    const filePaths = tests.map(({ casePath }) => fileURLToPath(new URL(casePath, root)));
+    const results = await eslint.lintFiles(filePaths);
 
-    results.forEach((result, index) => {
+    results.forEach((result: LintMessage, index: number) => {
         const { casePath, cases } = tests[index];
 
         describe(casePath, () => {
@@ -93,7 +99,7 @@ export async function testSingleFile (root: string, casePath: string, cases: Cas
 export async function testCode (
     props: {
         code: string;
-        config: Linter.Config<Linter.RulesRecord, Linter.RulesRecord>;
+        config: NonNullable<Parameters<typeof testMultipleFiles>[2]>['eslintConfig'];
         cases: Case[];
         /** @default 'js' */
         fileExtension?: string;
@@ -108,8 +114,8 @@ export async function testCode (
     const temporaryTestFilePath = `${testDirectoryPath}/${temporaryTestFilename}` as const;
     const eslintConfig = { ...props.config };
 
-    if (eslintConfig.parserOptions?.project === '<temporary-project>') {
-        eslintConfig.parserOptions.project = `${testDirectoryPath}/tsconfig.json`;
+    if (eslintConfig.languageOptions?.parserOptions?.project === '<temporary-project>') {
+        eslintConfig.languageOptions.parserOptions.project = `${testDirectoryPath}/tsconfig.json`;
     }
 
     try {

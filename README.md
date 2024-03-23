@@ -13,13 +13,15 @@ and configurations into your projects.
 ## Table of Contents
 - [Insider's Config Library](#insiders-config-library)
   - [Table of Contents](#table-of-contents)
-  - [ESLint Configurations](#eslint-configurations)
+  - [ESLint Configurations (Flat, ESLint v9+)](#eslint-configurations-flat-eslint-v9)
+  - [ESLint Configurations (`eslintrc`, ESLint v8 and earlier)](#eslint-configurations-eslintrc-eslint-v8-and-earlier)
   - [Stylelint Configurations](#stylelint-configurations)
     - [About StyleLint](#about-stylelint)
   - [TypeScript/JavaScript Configurations](#typescriptjavascript-configurations)
+  - [Versioning Policy](#versioning-policy)
   - [Contributing](#contributing)
 
-## ESLint Configurations
+## ESLint Configurations (Flat, ESLint v9+)
 
 [![eslint-config](https://flat.badgen.net/npm/v/@useinsider/eslint-config)](https://npmjs.com/package/@useinsider/eslint-config)
 
@@ -28,6 +30,16 @@ project structures. To integrate these configurations into your project,
 explore the [`eslint-config`] directory and follow the instructions.
 
 [`eslint-config`]: ./packages/eslint-config/#readme
+
+## ESLint Configurations (`eslintrc`, ESLint v8 and earlier)
+
+[![eslint-config-rc](https://flat.badgen.net/npm/v/@useinsider/eslint-config-rc)](https://npmjs.com/package/@useinsider/eslint-config-rc)
+
+For using the configs the `eslintrc` version of ESLint `eslintrc` file
+structure, head to the [`eslint-config-rc`] directory and follow the
+installation instructions.
+
+[`eslint-config-rc`]: ./packages/eslint-config-rc/#readme
 
 ## Stylelint Configurations
 
@@ -66,6 +78,10 @@ the [`tsconfig`] directory and follow the setup instructions.
 </blockquote>
 
 [`tsconfig`]: ./packages/tsconfig/#readme
+
+## Versioning Policy
+
+This project follows the [Semantic Versioning](https://semver.org) policy.
 
 ## Contributing
 

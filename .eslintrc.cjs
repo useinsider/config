@@ -1,4 +1,4 @@
-const eslintConfigRootPath = './packages/eslint-config/src';
+const eslintConfigRootPath = './packages/eslint-config-rc/src';
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {

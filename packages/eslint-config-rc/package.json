@@ -1,0 +1,91 @@
+{
+    "name": "@useinsider/eslint-config-rc",
+    "type": "module",
+    "version": "1.2.0",
+    "description": "A collection of ESLint configurations provided by @useinsider, offering support for various environments including Vanilla JS, TypeScript, and framework-specific setups such as Vue 3.",
+    "keywords": [
+        "useinsider",
+        "eslint",
+        "eslint-config",
+        "lint",
+        "code style",
+        "vanilla",
+        "typescript",
+        "vue",
+        "vue3",
+        "node"
+    ],
+    "author": "Sahin Deniz <sahin.deniz@useinsider.com>",
+    "license": "MIT",
+    "packageManager": "pnpm@8.11.0",
+    "scripts": {
+        "lint": "eslint ./",
+        "lint:fix": "pnpm lint --fix",
+        "test": "vitest",
+        "test:ci": "pnpm test",
+        "release": "semantic-release -e semantic-release-monorepo"
+    },
+    "homepage": "https://github.com/useinsider/config/tree/main/packages/eslint-config-rc#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/useinsider/config",
+        "directory": "packages/eslint-config-rc"
+    },
+    "bugs": {
+        "url": "https://github.com/useinsider/config/issues"
+    },
+    "exports": {
+        ".": "./src/node/index.cjs",
+        "./node": "./src/node/index.cjs",
+        "./config": "./src/config/index.cjs",
+        "./dom": "./src/dom/index.cjs",
+        "./typescript": "./src/typescript/index.cjs",
+        "./typescript-dom": "./src/typescript-dom/index.cjs",
+        "./vue3": "./src/vue3/index.cjs",
+        "./vue3-typescript": "./src/vue3-typescript/index.cjs"
+    },
+    "files": [
+        "src/**/*"
+    ],
+    "engines": {
+        "node": "^16.0.0 || >=18.0.0"
+    },
+    "dependencies": {
+        "@cspell/eslint-plugin": "6.19.2",
+        "@stylistic/eslint-plugin": "1.4.1",
+        "@stylistic/eslint-plugin-migrate": "1.4.1",
+        "eslint": "8.54.0",
+        "eslint-config-airbnb-base": "15.0.0",
+        "eslint-plugin-import": "2.29.0",
+        "eslint-plugin-jsdoc": "46.9.0"
+    },
+    "devDependencies": {
+        "@semantic-release/changelog": "6.0.3",
+        "@semantic-release/git": "10.0.1",
+        "@types/eslint": "8.56.2",
+        "@types/fs-extra": "11.0.4",
+        "@types/node": "20.10.2",
+        "@typescript-eslint/eslint-plugin": "6.13.2",
+        "@useinsider/eslint-config": "workspace:*",
+        "@useinsider/release-config": "workspace:*",
+        "@vitest/coverage-v8": "0.34.6",
+        "@vue/eslint-config-typescript": "12.0.0",
+        "eslint-plugin-vue": "9.19.2",
+        "eslint-plugin-vue-scoped-css": "2.5.1",
+        "fs-extra": "11.2.0",
+        "semantic-release": "19.0.5",
+        "semantic-release-monorepo": "7.0.5",
+        "vite-tsconfig-paths": "4.2.2",
+        "vitest": "0.34.6",
+        "vue": "3.3.13",
+        "vue-eslint-parser": "9.3.2"
+    },
+    "optionalDependencies": {
+        "@rushstack/eslint-patch": ">=1.6.0",
+        "@stylistic/eslint-plugin": ">=1.4.1",
+        "@stylistic/eslint-plugin-migrate": ">=1.4.1"
+    },
+    "overrides": {
+        "vite": "4.4.12"
+    }
+}

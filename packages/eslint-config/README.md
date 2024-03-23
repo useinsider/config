@@ -5,8 +5,8 @@
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
     - [Installation](#installation)
-  - [Versioning Policy](#versioning-policy)
-  - [Available Configurations](#available-configurations)
+  - [Examples](#examples)
+  - [Available Presets](#available-presets)
     - [Vanilla 🍦](#vanilla-)
     - [Framework-specific](#framework-specific)
     - [⏳ Upcoming Configurations](#-upcoming-configurations)
@@ -36,56 +36,75 @@ using the `-D` and `-E` flags in your package manager commands.
 
    You can check the official [ESLint documentation] to get more details.
 3. **Extend the Configuration:**
-   Add the following to your `.eslintrc` file to extend the configuration:
-    ```json5
-    {
-      "extends": ["@useinsider/eslint-config/dom"],
-      // Add the rest of your configuration here
-    }
+   Add the following to your `eslint.config.js` file to use the presets:
+    ```js
+    import useInsider from '@useinsider/eslint-config';
+
+    /** @type {import('eslint').Linter.FlatConfig[]} */
+    export default [
+        await useInsider({
+            // See `Available Presets`
+            preset: ['dom'],
+            config: {
+                // Glob file path pattern to specify the target files of the
+                // selected presets
+                files: ['src/**/*'],
+            },
+        }),
+        await useInsider({
+            preset: ['node', 'config'],
+            config: {
+                files: ['**/eslint.config.js'],
+            },
+        }),
+    ];
     ```
+4. Adjust your `eslint.config.js` to your projects needs. Choose the right
+   preset for the right folder path
 
-[ESLint documentation]: https://eslint.org/docs/latest/use/configure/configuration-files
+[ESLint documentation]: https://eslint.org/docs/next/use/configure/configuration-files
 
-## Versioning Policy
+## Examples
 
-This project follows the [Semantic Versioning](https://semver.org) policy.
+Checkout the [examples directory](../../examples) to see various apps with the extended ESLint
+configuration.
 
-## Available Configurations
+## Available Presets
 
 We provide a variety of configurations to suit different environments and
-frameworks. Here's a list of available configurations:
+frameworks. Here's a list of available presets:
 
 ### Vanilla 🍦
 
-| Environment       | Browser (DOM)                                                             | Node                                                                                                      |
-| :---------------- | :------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------- |
-| **EcmaScript/JS** | [`@useinsider/eslint-config/dom`](./src/dom#readme)                       | [`@useinsider/eslint-config`](./src/node#readme)<br>[`@useinsider/eslint-config/node`](./src/node#readme) |
-| **TypeScript**    | [`@useinsider/eslint-config/typescript-dom`](./src/typescript-dom#readme) | [`@useinsider/eslint-config/typescript`](./src/typescript#readme)                                         |
-| **Config files**  |                                                                           | [`@useinsider/eslint-config/config`](./src/config#readme)                                                 |
+| Environment       | Browser (DOM)                                           | Node                                                                                            |
+| :---------------- | :------------------------------------------------------ | :---------------------------------------------------------------------------------------------- |
+| **EcmaScript/JS** | [`dom`](./src/configs/dom#readme)                       | [`@useinsider/eslint-config`](./src/configs/node#readme)<br>[`node`](./src/configs/node#readme) |
+| **TypeScript**    | [`typescript-dom`](./src/configs/typescript-dom#readme) | [`typescript`](./src/configs/typescript#readme)                                                 |
+| **Config files**  |                                                         | [`config`](./src/configs/config#readme)                                                         |
 
 ### Framework-specific
 
-| Environment | JavaScript                                            | TypeScript                                                                  |
-| :---------- | :---------------------------------------------------- | :-------------------------------------------------------------------------- |
-| **Vue 3**   | [`@useinsider/eslint-config/vue3`](./src/vue3#readme) | [`@useinsider/eslint-config/vue3-typescript`](./src/vue3-typescript#readme) |
+| Environment | JavaScript                          | TypeScript                                                |
+| :---------- | :---------------------------------- | :-------------------------------------------------------- |
+| **Vue 3**   | [`vue3`](./src/configs/vue3#readme) | [`vue3-typescript`](./src/configs/vue3-typescript#readme) |
 
 ---
 
 ### ⏳ Upcoming Configurations
 
-Not available yet!
+Following presets are not available yet!
 
 #### Vanilla 🍦
 
-| Environment       | Browser (DOM)                                                     | Node                                                      |
-| :---------------- | :---------------------------------------------------------------- | :-------------------------------------------------------- |
-| **Legacy ES5 💀​** | [`@useinsider/eslint-config/legacy-dom`](./src/legacy-dom#readme) | [`@useinsider/eslint-config/legacy`](./src/legacy#readme) |
+| Environment       | Browser (DOM)                                   | Node                                    |
+| :---------------- | :---------------------------------------------- | :-------------------------------------- |
+| **Legacy ES5 💀​** | [`legacy-dom`](./src/configs/legacy-dom#readme) | [`legacy`](./src/configs/legacy#readme) |
 
 #### Framework-specific
 
-| Environment | JavaScript                                            | TypeScript                                                                  |
-| :---------- | :---------------------------------------------------- | :-------------------------------------------------------------------------- |
-| **Vue 2**   | [`@useinsider/eslint-config/vue2`](./src/vue2#readme) | [`@useinsider/eslint-config/vue2-typescript`](./src/vue2-typescript#readme) |
+| Environment | JavaScript                          | TypeScript                                                |
+| :---------- | :---------------------------------- | :-------------------------------------------------------- |
+| **Vue 2**   | [`vue2`](./src/configs/vue2#readme) | [`vue2-typescript`](./src/configs/vue2-typescript#readme) |
 
 ## Contributing
 

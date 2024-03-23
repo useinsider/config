@@ -1,41 +1,62 @@
-import { type Linter } from 'eslint';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import type { Linter } from 'eslint';
+import { FlatCompat } from '@eslint/eslintrc';
+import globals from 'globals';
 import { describe } from 'vitest';
+import { preConfig } from '../../../src/base';
+import useInsider from '../../../src/main';
+import { merge } from '../../../src/utils/merge';
+import { mergeAll } from '../../../src/utils/mergeAllConfig';
 import { testCode, testSingleFile } from '../../test-facility/testers';
 
-function createVueConfig (rules: Linter.RulesRecord, extend = true): Linter.Config {
+const compat = new FlatCompat({
+    baseDirectory: dirname(fileURLToPath(import.meta.url)),
+});
+
+async function createVueConfig (rules: Linter.RulesRecord, extend = true): Promise<Linter.FlatConfig> {
     if (extend) {
-        return {
-            extends: [
-                require.resolve('@useinsider/eslint-config/vue3-typescript'),
-            ],
-            parserOptions: {
-                project: '<temporary-project>',
+        return useInsider({
+            preset: ['vue3-typescript'],
+            config: {
+                files: ['**/*.vue'],
+                languageOptions: {
+                    parserOptions: {
+                        project: '<temporary-project>',
+                    },
+                },
+                rules,
             },
-            rules,
-        };
+        });
     }
 
-    return {
-        parser: require.resolve('vue-eslint-parser'),
-        env: {
-            browser: true,
-            es2021: true,
-        },
-        parserOptions: {
-            parser: require.resolve('@typescript-eslint/parser'),
-            ecmaVersion: 'latest',
-            sourceType: 'module',
-            ecmaFeatures: {
-                jsx: true,
-            },
-            extraFileExtensions: ['.vue'],
-        },
-        plugins: [
-            'vue',
-            '@typescript-eslint',
-        ],
-        rules,
-    };
+    return useInsider({
+        preset: ['vue3'],
+        config: merge(
+            mergeAll(compat.config({
+                parser: 'vue-eslint-parser',
+            })),
+            {
+                files: ['**/*.vue'],
+                languageOptions: {
+                    parserOptions: {
+                        parser: require.resolve('@typescript-eslint/parser'),
+                        ecmaVersion: 'latest',
+                        sourceType: 'module',
+                        ecmaFeatures: {
+                            jsx: true,
+                        },
+                        extraFileExtensions: ['.vue'],
+                    },
+                    globals: {
+                        ...globals.browser,
+                    },
+                },
+                ...preConfig(['vue', '@typescript-eslint']),
+                rules,
+            } as Linter.FlatConfig
+        ),
+    });
 }
 
 await testSingleFile(import.meta.url, 'test/case.vue', [
@@ -122,10 +143,10 @@ await testSingleFile(import.meta.url, 'test/case.vue', [
     { line: 123, column: 18, ruleId: 'vue/no-extra-parens' },
     { line: 124, column: 8, ruleId: 'vue/no-extra-parens' },
     { line: 125, column: 19, ruleId: 'vue/no-parsing-error' },
-    { line: 125, column: 20, ruleId: 'vue/no-irregular-whitespace' },
     { line: 125, column: 20, ruleId: 'no-irregular-whitespace' },
-    { line: 126, column: 20, ruleId: 'vue/no-irregular-whitespace' },
+    { line: 125, column: 20, ruleId: 'vue/no-irregular-whitespace' },
     { line: 126, column: 20, ruleId: 'no-irregular-whitespace' },
+    { line: 126, column: 20, ruleId: 'vue/no-irregular-whitespace' },
     { line: 131, column: 25, ruleId: 'vue/comma-spacing' },
     { line: 134, column: 23, ruleId: 'vue/dot-notation' },
     { line: 137, column: 24, ruleId: 'vue/dot-notation' },
@@ -172,84 +193,86 @@ describe('irregular whitespace', async () => {
 </template>
 `,
         fileExtension: 'vue',
-        config: createVueConfig({ 'vue/no-irregular-whitespace': 'error' }),
+        config: await createVueConfig({ 'vue/no-irregular-whitespace': 'error' }),
         cases: [
             { line: 3, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 3, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 3, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 3, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 4, column: 9, ruleId: 'vue/html-self-closing' },
             { line: 4, column: 13, ruleId: 'vue/no-parsing-error' },
-            { line: 4, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 4, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 4, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 5, column: 13, ruleId: 'vue/no-parsing-error' },
+            { line: 5, column: 14, ruleId: 'no-irregular-whitespace' },
             { line: 5, column: 14, ruleId: 'vue/no-bare-strings-in-template' },
             { line: 5, column: 14, ruleId: 'vue/no-irregular-whitespace' },
-            { line: 5, column: 14, ruleId: 'no-irregular-whitespace' },
             { line: 6, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 6, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 6, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 6, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 7, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 7, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 7, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 7, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 8, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 8, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 8, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 8, column: 14, ruleId: 'vue/no-irregular-whitespace' },
+            { line: 9, column: 14, ruleId: 'no-irregular-whitespace' },
             { line: 9, column: 14, ruleId: 'vue/no-bare-strings-in-template' },
             { line: 9, column: 14, ruleId: 'vue/no-irregular-whitespace' },
-            { line: 9, column: 14, ruleId: 'no-irregular-whitespace' },
             { line: 10, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 10, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 10, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 10, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 11, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 11, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 11, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 11, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 12, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 12, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 12, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 12, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 13, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 13, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 13, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 13, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 14, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 14, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 14, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 14, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 15, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 15, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 15, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 15, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 16, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 16, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 16, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 16, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 17, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 17, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 17, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 17, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 18, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 18, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 18, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 18, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 19, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 19, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 19, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 19, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 20, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 20, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 20, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 20, column: 14, ruleId: 'vue/no-irregular-whitespace' },
+            { line: 21, column: 14, ruleId: 'no-irregular-whitespace' },
             { line: 21, column: 14, ruleId: 'vue/no-bare-strings-in-template' },
             { line: 21, column: 14, ruleId: 'vue/no-irregular-whitespace' },
-            { line: 21, column: 14, ruleId: 'no-irregular-whitespace' },
             { line: 22, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 22, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 22, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 22, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 23, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 23, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 23, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 23, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 24, column: 9, ruleId: 'vue/html-self-closing' },
-            { line: 24, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 24, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 24, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 25, column: 9, ruleId: 'vue/html-self-closing' },
+            { line: 25, column: 14, ruleId: 'linebreak-style' },
             { line: 25, column: 14, ruleId: '@stylistic/linebreak-style' },
-            { line: 25, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 25, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 25, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 26, column: 9, ruleId: 'vue/html-self-closing' },
+            { line: 27, column: 14, ruleId: 'linebreak-style' },
             { line: 27, column: 14, ruleId: '@stylistic/linebreak-style' },
-            { line: 27, column: 14, ruleId: 'vue/no-irregular-whitespace' },
             { line: 27, column: 14, ruleId: 'no-irregular-whitespace' },
+            { line: 27, column: 14, ruleId: 'vue/no-irregular-whitespace' },
         ],
     });
 });
