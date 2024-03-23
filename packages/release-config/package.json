@@ -12,6 +12,6 @@
         "lint:fix": "pnpm lint --fix"
     },
     "devDependencies": {
-        "semantic-release": "19.0.5"
+        "semantic-release": "23.0.5"
     }
 }
