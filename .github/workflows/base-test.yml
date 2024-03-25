@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    runs-on: self-runner-node16
+    runs-on: useinsider-runner-node20
     steps:
       - name: Checkout current branch
         uses: actions/checkout@v4

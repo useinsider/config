@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   variables:
-    runs-on: self-hosted
+    runs-on: useinsider-runner-node20
     outputs:
       isPrimalBranch: ${{ steps.set-variables.outputs.isPrimalBranch }}
     steps:
