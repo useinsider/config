@@ -3,21 +3,15 @@ import useInsider from '@useinsider/eslint-config';
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
     await useInsider({
-        preset: ['vue3'],
+        preset: ['node'],
         config: {
-            files: ['src/*.vue'],
-        },
-    }),
-    await useInsider({
-        preset: ['dom'],
-        config: {
-            files: ['src/**/*.js'],
+            files: ['index.js'],
         },
     }),
     await useInsider({
         preset: ['node', 'config'],
         config: {
-            files: ['eslint.config.js'],
+            files: ['**/eslint.config.js'],
         },
     }),
 ];
