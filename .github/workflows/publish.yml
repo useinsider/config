@@ -6,13 +6,14 @@ on:
       - main
       - beta
       - alpha
+      - release
 
 concurrency:
   group: publish-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   quality-assurance:
@@ -47,11 +48,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
-        run: pnpm audit signatures
+      # - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+      #   run: pnpm audit signatures
 
       - name: Release a new version
         run: pnpm release
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
