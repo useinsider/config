@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    runs-on: useinsider-runner-node20
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout current branch
         uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
           persist-credentials: false
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           run_install: false
 

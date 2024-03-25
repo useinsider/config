@@ -2,7 +2,7 @@ name: Gitleaks-Action
 on: [push]
 jobs:
   build:
-    runs-on: self-runner-node
+    runs-on: ubuntu-latest
     steps:
     - name: Trigger to Gitleak
       run: |

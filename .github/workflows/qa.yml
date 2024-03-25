@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   variables:
-    runs-on: useinsider-runner-node20
+    runs-on: ubuntu-latest
     outputs:
       isPrimalBranch: ${{ steps.set-variables.outputs.isPrimalBranch }}
     steps:
