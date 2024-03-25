@@ -20,6 +20,10 @@
       "path": "packages/eslint-config"
     },
     {
+      "name": "eslint-config-rc",
+      "path": "packages/eslint-config-rc"
+    },
+    {
       "name": "release-config",
       "path": "packages/release-config"
     },
@@ -30,7 +34,7 @@
     {
       "name": "tsconfig",
       "path": "packages/tsconfig"
-    }
+    },
   ],
   "settings": {
     "[html]": {
@@ -45,6 +49,7 @@
     "conventionalCommits.scopes": [
       "root",
       "eslint-config",
+      "eslint-config-rc",
       "release-config",
       "stylelint-config",
       "tsconfig"
@@ -54,6 +59,5 @@
     "npm.packageManager": "pnpm",
     "scss.validate": false,
     "stylelint.enable": true,
-    "svg.preview.background": "transparent"
   }
 }

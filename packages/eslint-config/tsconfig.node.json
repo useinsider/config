@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "composite": true,
+        "allowJs": true,
+        "checkJs": true,
+        "lib": [
+            "esnext"
+        ],
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "Bundler",
+        "skipLibCheck": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+    },
+    "include": [
+        "./vite.config.ts",
+        "./scripts/**/*.ts"
+    ],
+    // "exclude": [
+    //     "./tests/**/case.*"
+    // ]
+}
