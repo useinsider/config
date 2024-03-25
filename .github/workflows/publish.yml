@@ -20,7 +20,7 @@ jobs:
   release:
     name: Release
     needs: quality-assurance
-    runs-on: self-runner-node16
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       issues: write

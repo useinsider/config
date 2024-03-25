@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    runs-on: self-runner-node16
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout current branch
         uses: actions/checkout@v4
